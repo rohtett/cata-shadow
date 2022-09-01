@@ -1,3 +1,5 @@
+import "./index.css";
+
 const menu: string[] = ["introduction", "talents", "rotation", "stats"]
 const Header = () => {
   return (
