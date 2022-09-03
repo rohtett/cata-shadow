@@ -4,14 +4,14 @@ const menu: string[] = ["introduction", "talents", "rotation", "stats"]
 const Header = () => {
   return (
     <header>
-      <div id="logo">
-        <img src="" />
+      <a id="logo" href="#">
+        <div></div>
         <h2>Shadow Priest</h2>
-      </div>
+      </a>
       <nav>
         <ul>
         { menu.map((el:string) => (
-          <a href="#">
+          <a key = { el } href="#">
             <li>
               { el }
             </li>
