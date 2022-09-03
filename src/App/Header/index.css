@@ -22,12 +22,12 @@ header {
   margin: 0px;
 }
 
-nav {
-  justify-content: center;
+header nav {
+  display: flex;
   align-items: center;
 }
 
-nav ul {
+header ul {
   display: flex;
   height: 50px;
   padding-left: 0px;
@@ -35,7 +35,7 @@ nav ul {
   padding-right: 16px;
 }
 
-nav a {
+header a {
   padding: 10px;
   align-items: center;
   color: #bbb;
@@ -47,7 +47,7 @@ nav a {
     justify-content: flex-end;
   }
 
-  nav ul {
+  header ul {
     background-image: url("hamburger.png");
     filter: invert(82%) sepia(2%) saturate(0%) hue-rotate(356deg) brightness(95%) contrast(83%);
     background-size: contain;
@@ -58,11 +58,11 @@ nav a {
     width: 40px;
   }
 
-  nav ul {
+  header ul {
     display: block;
   }
 
-  nav li {
+  header li {
     display: none;
     font-size: 1.5em;
     position: relative;

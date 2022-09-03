@@ -19,10 +19,11 @@ const Stats = () => {
           <li>Haste (until your haste cap, see below)</li>
           <li>Mastery</li>
           <li>Critical Strike</li>
+          <li>Haste</li>
         </ol>
       </section>
       <section>
-        
+
       </section>
     </article>
   )

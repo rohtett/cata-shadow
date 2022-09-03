@@ -10,11 +10,37 @@
 
 #wrapper {
     max-width: 1136px;
+    display: flex;
+}
+
+#wrapper nav {
+  padding-right: 40px;
+}
+
+#wrapper nav ul {
+  list-style-type: none;
+}
+
+#wrapper input {
+  display: none;
+}
+
+#wrapper label {
+  color: #444;
+}
+
+#wrapper label:hover {
+  color: #bbb;
+}
+
+#wrapper input:checked + label {
+  color: #bbb;
+  text-decoration: underline;
 }
 
 article {
+  width: 950px;
   padding-left: 40px;
-  padding-right: 40px;
 }
 
 @media (max-width: 652px) {
