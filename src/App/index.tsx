@@ -26,28 +26,30 @@ const App = () => {
         </Routes>
         <nav>
           <ul>
-          { menu.map((el:string[]) => (
-            <li key = { el[1] } >
-                <input
-                  name = "menu"
-                  type = "radio"
-                  value = { el[1] }
-                  id = { el[1] }
-                  checked = { contents === el[1] }
-                  onChange = {() => {
-                    setContents(el[1]);
-                    if (el[1] === "introduction") {
-                      navigate("../");
-                    } else {
-                      navigate("../" + el[1]);
-                    }
-                  }}
-                />
-                <label htmlFor = { el[1] }>
-                  { el[0] }
-                </label>
-            </li>
-          ))}
+            <div id = "modalMenu">
+              { menu.map((el:string[]) => (
+                <li key = { el[1] } >
+                    <input
+                      name = "menu"
+                      type = "radio"
+                      value = { el[1] }
+                      id = { el[1] }
+                      checked = { contents === el[1] }
+                      onChange = {() => {
+                        setContents(el[1]);
+                        if (el[1] === "introduction") {
+                          navigate("../");
+                        } else {
+                          navigate("../" + el[1]);
+                        }
+                      }}
+                    />
+                    <label htmlFor = { el[1] }>
+                      { el[0] }
+                    </label>
+                </li>
+              ))}
+            </div>
           </ul>
         </nav>
       </div>

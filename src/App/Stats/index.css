@@ -1,0 +1,23 @@
+.tableContainer {
+  width: 100%;
+  display: flex;
+}
+
+.tableContainer table {
+  margin: 10px;
+}
+
+.tableContainer table, th, td {
+  border: 1px solid #bbb;
+  border-collapse: collapse;
+}
+
+.tableContainer td {
+  width: 150px;
+  text-align: right;
+}
+
+.tableContainer th {
+  width: 200px;
+  text-align: left
+}
