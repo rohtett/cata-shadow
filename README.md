@@ -31,9 +31,9 @@ I used GitHub Pages to deploy my website. It was produced as follows:
 6. Select the master branch /root directory and press save to deploy the website to GitHub Pages.
 
 ### Repository Link
-[link](https://github.com/rohtett/cata-shadow/)
+[GitHub Pages Link](https://rohtett.github.io/cata-shadow/)
 ### Running Code Locally
 How to run the code locally:
-1. Follow the link to my [GitHub repository](https://rohtett.github.io/cata-shadow/)
+1. Follow the link to my [GitHub repository](https://github.com/rohtett/cata-shadow/)
 2. Click "Code" and select "Download ZIP"
 3. Once downloaded, extract the ZIP file and launch `index.html` to open the landing page.
