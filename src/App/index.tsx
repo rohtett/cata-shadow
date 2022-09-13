@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 import Header from "./Header/index";
 import Introduction from "./Introduction/index";
@@ -9,10 +9,18 @@ import Stats from "./Stats/index";
 import Footer from "./Footer/index";
 
 const menu: string[][] = [["Introduction", "introduction"], ["Talents and Glyphs", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"]]
+const mediaQuery = window.matchMedia("(max-width: 576px)");
 
 const App = () => {
+
+  const [modal, setModal]= useState("block");
   const [contents, setContents] = useState("introduction");
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!mediaQuery.matches) {
+      setModal("none");
+    };
+  }, [mediaQuery]);
 
   return (
     <div id="container">
@@ -25,8 +33,17 @@ const App = () => {
           <Route path = "/stats" element = { <Stats /> } />
         </Routes>
         <nav>
-          <ul>
-            <div id = "modalMenu">
+          <ul onClick = {() => {
+            if (mediaQuery.matches) {
+              setTimeout(() => {
+                document.addEventListener("click", () => {
+                  setModal("none");
+                }, {once: true});
+              }, 50);
+              setModal("block");
+            }
+          }}>
+            <div id = "modalMenu" style = {{ display: modal }}>
               { menu.map((el:string[]) => (
                 <li key = { el[1] } >
                     <input
@@ -38,10 +55,11 @@ const App = () => {
                       onChange = {() => {
                         setContents(el[1]);
                         if (el[1] === "introduction") {
-                          navigate("../");
+                          navigate("../cata-shadow");
                         } else {
-                          navigate("../" + el[1]);
+                          navigate("../cata-shadow/" + el[1]);
                         }
+                        setModal("none");
                       }}
                     />
                     <label htmlFor = { el[1] }>

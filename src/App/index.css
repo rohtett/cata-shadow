@@ -45,6 +45,7 @@
 article {
   width: 950px;
   padding-left: 40px;
+  text-align: justify;
 }
 
 @media (max-width: 576px) {
@@ -63,22 +64,21 @@ article {
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    left: 20px;
-    top: -90px;
-    height: 40px;
-    width: 40px;
-    z-index: 10;
+    left: 25px;
+    top: -80px;
+    height: 35px;
+    width: 35px;
+    z-index: 1;
   }
   #modalMenu {
-    display: none;
     background-color: white;
     filter: none;
     height: 100vh;
     width: 350px;
     position: relative;
-    left: -60px;
-    top: -30px;
-    z-index: 0;
+    left: -65px;
+    top: -25px;
+    z-index: -1;
   }
   #wrapper nav li {
     position: relative;
