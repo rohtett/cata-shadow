@@ -1,4 +1,7 @@
 footer {
+  position: relative;
+  top: 100px;
+  padding-bottom: 5px;
   font-size: 0.7em;
   text-align: center;
 }

@@ -1,0 +1,35 @@
+#spells li {
+  display: flex;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.spell-icon {
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-position: center;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.spell-border {
+  margin-right: 5px;
+}
+
+#vampiric-embrace {
+  background-image: url("vampiric_embrace.jpg");
+}
+#shadow-word-death {
+  background-image: url("shadow_word_death.jpg");
+}
+#dispersion {
+  background-image: url("dispersion.jpg");
+}
+#mass-dispel {
+  background-image: url("mass_dispel.jpg");
+}
+
+#contents li {
+  font-weight: bolder;
+}
