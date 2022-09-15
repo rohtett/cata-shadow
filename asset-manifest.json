@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/cata-shadow/static/css/main.810901cb.css",
-    "main.js": "/cata-shadow/static/js/main.49f3ce48.js",
+    "main.css": "/cata-shadow/static/css/main.97ff1f61.css",
+    "main.js": "/cata-shadow/static/js/main.6d89461e.js",
     "static/js/787.47827543.chunk.js": "/cata-shadow/static/js/787.47827543.chunk.js",
+    "static/media/PriestDiscipline.png": "/cata-shadow/static/media/PriestDiscipline.511799f86c7701cc0248.png",
+    "static/media/PriestHoly.png": "/cata-shadow/static/media/PriestHoly.71d9f065b36ae393d158.png",
+    "static/media/PriestShadow.png": "/cata-shadow/static/media/PriestShadow.362b8102537dc56ff869.png",
+    "static/media/Pain_and_Suffering.png": "/cata-shadow/static/media/Pain_and_Suffering.0fbf64122b84ff5596ff.png",
     "index.html": "/cata-shadow/index.html",
-    "main.810901cb.css.map": "/cata-shadow/static/css/main.810901cb.css.map",
-    "main.49f3ce48.js.map": "/cata-shadow/static/js/main.49f3ce48.js.map",
+    "main.97ff1f61.css.map": "/cata-shadow/static/css/main.97ff1f61.css.map",
+    "main.6d89461e.js.map": "/cata-shadow/static/js/main.6d89461e.js.map",
     "787.47827543.chunk.js.map": "/cata-shadow/static/js/787.47827543.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.810901cb.css",
-    "static/js/main.49f3ce48.js"
+    "static/css/main.97ff1f61.css",
+    "static/js/main.6d89461e.js"
   ]
 }
