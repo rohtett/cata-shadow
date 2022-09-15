@@ -6,9 +6,10 @@ import Introduction from "./Introduction/index";
 import Talents from "./Talents/index";
 import Rotation from "./Rotation/index";
 import Stats from "./Stats/index";
+import Consumables from "./Consumables/index";
 import Footer from "./Footer/index";
 
-const menu: string[][] = [["Introduction", "introduction"], ["Talents and Glyphs", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables", "consumables"]]
+const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
 
 const App = () => {
   const [contents, setContents] = useState("introduction");
@@ -39,6 +40,9 @@ const App = () => {
           <Route path = "/cata-shadow/stats" element = { <Stats /> }
             key = { document.location.href }
           />
+          <Route path = "/cata-shadow/consumables" element = { <Consumables /> }
+            key = { document.location.href }
+          />
           <Route path ="*" element = { <Landing /> }
             key = { document.location.href }
           />
@@ -65,11 +69,10 @@ const App = () => {
                       checked = { contents === el[1] }
                       onChange = {() => {
                         setContents(el[1]);
-                        if (el[1] === "introduction") {
-                          navigate("../cata-shadow");
-                        } else {
+                        (el[1] === "introduction") ?
+                          navigate("../cata-shadow")
+                         :
                           navigate("../cata-shadow/" + el[1]);
-                        }
                         showMenus("none");
                       }}
                     />
@@ -94,11 +97,10 @@ const App = () => {
                       checked = { contents === el[1] }
                       onChange = {() => {
                         setContents(el[1]);
-                        if (el[1] === "introduction") {
-                          navigate("../cata-shadow");
-                        } else {
+                        (el[1] === "introduction") ?
+                          navigate("../cata-shadow")
+                         :
                           navigate("../cata-shadow/" + el[1]);
-                        }
                       }}
                     />
                     <label htmlFor = { el[1] }>

@@ -49,6 +49,7 @@
 }
 
 article {
+  min-height: 100vh;
   width: 950px;
   padding-left: 40px;
   text-align: justify;
@@ -63,6 +64,14 @@ article {
   justify-content: center;
   background-image: url("border.png");
   background-repeat: no-repeat;
+}
+
+.spell-icon {
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  border-radius: 4px;
+  z-index: -1;
 }
 
 @media (max-width: 576px) {

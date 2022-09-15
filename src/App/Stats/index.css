@@ -1,3 +1,19 @@
+#haste-caps h4 {
+  display: flex;
+}
+
+#devouring-plague {
+  background-image: url("../Rotation/Devouring_Plague.jpg");
+}
+
+#shadow-word-pain {
+  background-image: url("../../../public/logo.jpg");
+}
+
+#vampiric-touch {
+  background-image: url("../Rotation/Vampiric_Touch.jpg");
+}
+
 .tableContainer {
   width: 100%;
   display: flex;

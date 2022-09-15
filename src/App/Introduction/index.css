@@ -1,7 +1,14 @@
+#spells ul p {
+  margin-bottom: 0px;
+}
+
 #spells li {
-  display: flex;
   font-weight: bolder;
-  margin-top: 10px;
+}
+
+#spells li .spell-border {
+  position: relative;
+  top: 10px;
 }
 
 .spell-icon {
@@ -14,6 +21,7 @@
 }
 
 .spell-border {
+  display: inline-flex;
   margin-right: 5px;
 }
 
@@ -28,6 +36,10 @@
 }
 #mass-dispel {
   background-image: url("mass_dispel.jpg");
+}
+
+#mind-control {
+  background-image: url("../Rotation/Mind_Control.jpg");
 }
 
 #contents li {

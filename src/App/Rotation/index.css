@@ -1,0 +1,45 @@
+#rotation h4 {
+  display: flex;
+}
+
+
+.inline-border {
+  margin-right: 0px;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  top: 5px;
+}
+
+.inline-icon {
+  height: 20px;
+  width: 20px;
+}
+
+#shadowfiend {
+  background-image: url("Shadowfiend.jpg");
+}
+
+#archangel {
+  background-image: url("Archangel.jpg");
+}
+
+#stopwatch {
+  background-image: url("Pocketwatch.jpg");
+}
+
+#gear-cog {
+  background-image: url("Gear_Cog.jpg");
+}
+
+#mind-flay {
+  background-image: url("Mind_Flay.jpg");
+}
+
+#mind-spike {
+  background-image: url("Mind_Spike.jpg");
+}
+
+#mind-blast {
+  background-image: url("Mind_Blast.jpg");
+}

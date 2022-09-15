@@ -1,0 +1,220 @@
+#talents > div {
+  display: flex;
+  justify-content: center;
+}
+
+#talents h4 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #444;
+  box-sizing: border-box;
+}
+@media (max-width: 576px) {
+  #talents > div {
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+  }
+}
+.popup {
+  background-color: rgba(16, 16, 16, 0.8);
+  position: fixed;
+  z-index: 2;
+}
+
+.talent-tooltip {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2px solid #bbb;
+  width: 256px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-bottom: 10px;
+}
+
+
+.tooltip-title {
+  padding: 10px;
+  text-align: left;
+  display: flex;
+}
+
+.talent-analysis {
+  width: 256px;
+  padding-bottom: 10px;
+}
+
+.tooltip-output {
+  font-size: 0.8em;
+  padding: 10px;
+}
+
+.shadow {
+  height: calc(440px/7);
+  width: 256px;
+  background-image: url("PriestShadow.png");
+  position: relative;
+  z-index: 0;
+  overflow-y: hidden;
+}
+
+.discipline {
+  height: calc(440px/7);
+  width: 256px;
+  background-image: url("PriestDiscipline.png");
+  position: relative;
+  z-index: 0;
+}
+
+.holy {
+  height: calc(440px/7);
+  width: 256px;
+  background-image: url("PriestHoly.png");
+  position: relative;
+  z-index: 0;
+}
+
+.talent {
+  width: 44px;
+  height: 44px;
+  margin: 10px;
+  position: relative;
+}
+
+.empty-talent {
+  opacity: 0;
+}
+
+.talent div {
+  position: relative;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+#darkness {
+  background-image: url("Darkness.png");
+}
+#veiled-shadows {
+  background-image: url("Veiled_Shadows.png")
+}
+
+.second {
+   background-position: 0px calc(-1*440px/7);
+}
+#improved-psychic-scream {
+  background-image: url("Improved_Psychic_Scream.png");
+}
+#twisted-faith {
+  background-image: url("Twisted_Faith.png");
+}
+
+.third {
+  background-position: 0px calc(-2*440px/7);
+}
+#shadowform {
+  background-image: url("Shadowform.png");
+}
+#phantasm {
+  background-image: url("Phantasm.png");
+}
+#harnessed-shadows {
+  background-image: url("Harnessed_Shadows.png");
+}
+
+.fourth {
+  background-position: 0px calc(-3*440px/7);
+}
+#silence {
+  background-image: url("Silence.png");
+}
+#masochism {
+  background-image: url("Masochism.png");
+}
+#mind-melt {
+  background-image: url("Mind_Melt.png");
+}
+
+.fifth {
+  background-position: 0px calc(-4*440px/7);
+}
+#pain-and-suffering {
+  background-image: url("Pain_and_Suffering.png");
+}
+#paralysis {
+  background-image: url("Paralysis.png");
+}
+
+.sixth {
+  background-position: 0px calc(-5*440px/7);
+}
+#psychic-horror {
+  background-image: url("Psychic_Horror.png");
+}
+#sin-and-punishment {
+  background-image: url("Sin_and_Punishment.png");
+}
+#shadowy-apparition {
+  background-image: url("Shadowy_Apparition.png");
+}
+
+.seventh {
+  background-position: 0px calc(-6*440px/7);
+}
+
+#power-word-shield {
+  background-image: url("Power_Word_Shield.png");
+}
+
+#twin-disciplines {
+  background-image: url("Twin_Disciplines.png");
+}
+
+#mental-agility {
+  background-image: url("Mental_Agility.png");
+}
+
+#evangelism {
+  background-image: url("Evangelism.png");
+}
+
+#inner-fire {
+  background-image: url("Inner_Fire.png");
+}
+
+#soul-warding {
+  background-image: url("Soul_Warding.png");
+}
+
+#guardian-spirit {
+  background-image: url("Guardian_Spirit.jpg");
+}
+
+#renew {
+  background-image: url("Renew.png");
+}
+
+#greater-heal {
+  background-image: url("Greater_Heal.png");
+}
+
+#divine-fury {
+  background-image: url("Divine_Fury.png");
+}
+
+#desperate-prayer {
+  background-image: url("Desperate_Prayer.png");
+}
+
+#surge-of-light {
+  background-image: url("Surge_of_Light.png");
+}
+
+#inspiration {
+  background-image: url("Inspiration.png");
+}
