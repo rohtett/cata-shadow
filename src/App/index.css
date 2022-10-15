@@ -41,7 +41,7 @@
 
 #wrapper input:checked + label {
   color: #bbb;
-  text-decoration: underline;
+  font-weight: bolder;
 }
 
 #modalMenu {

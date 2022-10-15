@@ -16,8 +16,8 @@
 @media (max-width: 576px) {
   #talents > div {
     flex-wrap: wrap-reverse;
-    justify-content: space-between;
   }
+
 }
 .popup {
   background-color: rgba(16, 16, 16, 0.8);

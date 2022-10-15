@@ -18,9 +18,11 @@ const App = () => {
 
   useEffect(() => {
     const article = document.querySelector("article") as HTMLInputElement;
-    article.addEventListener("click", () => {
+    const click = () => {
       showMenus("none");
-    })
+    }
+    article.addEventListener("click", click);
+    return () => article.removeEventListener("click", click);
   })
 
   return (

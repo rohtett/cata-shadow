@@ -8,7 +8,7 @@ const Row = (props: any) => {
       return talent ? (
         <div key = { key + "-" + talent }
           onClick = { () => {
-            (props.selectedTalent == talent) ?
+            (props.selectedTalent === talent) ?
               props.selectTalent(["", ""])
               : props.selectTalent(talent);
           }}
