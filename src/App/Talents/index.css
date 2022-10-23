@@ -53,7 +53,7 @@
 }
 
 .shadow {
-  height: calc(440px/7);
+  height: 440px;
   width: 256px;
   background-image: url("PriestShadow.png");
   position: relative;
@@ -62,7 +62,7 @@
 }
 
 .discipline {
-  height: calc(440px/7);
+  height: 440px;
   width: 256px;
   background-image: url("PriestDiscipline.png");
   position: relative;
@@ -70,7 +70,7 @@
 }
 
 .holy {
-  height: calc(440px/7);
+  height: 440px;
   width: 256px;
   background-image: url("PriestHoly.png");
   position: relative;
@@ -97,124 +97,106 @@
   z-index: -1;
 }
 
+
 #darkness {
-  background-image: url("Darkness.png");
+  background-image: url("icons/Darkness.png");
 }
 #veiled-shadows {
-  background-image: url("Veiled_Shadows.png")
+  background-image: url("icons/Veiled_Shadows.png")
 }
 
-.second {
-   background-position: 0px calc(-1*440px/7);
-}
 #improved-psychic-scream {
-  background-image: url("Improved_Psychic_Scream.png");
+  background-image: url("icons/Improved_Psychic_Scream.png");
 }
 #twisted-faith {
-  background-image: url("Twisted_Faith.png");
+  background-image: url("icons/Twisted_Faith.png");
 }
 
-.third {
-  background-position: 0px calc(-2*440px/7);
-}
 #shadowform {
-  background-image: url("Shadowform.png");
+  background-image: url("icons/Shadowform.png");
 }
 #phantasm {
-  background-image: url("Phantasm.png");
+  background-image: url("icons/Phantasm.png");
 }
 #harnessed-shadows {
-  background-image: url("Harnessed_Shadows.png");
+  background-image: url("icons/Harnessed_Shadows.png");
 }
 
-.fourth {
-  background-position: 0px calc(-3*440px/7);
-}
 #silence {
-  background-image: url("Silence.png");
+  background-image: url("icons/Silence.png");
 }
 #masochism {
-  background-image: url("Masochism.png");
+  background-image: url("icons/Masochism.png");
 }
 #mind-melt {
-  background-image: url("Mind_Melt.png");
+  background-image: url("icons/Mind_Melt.png");
 }
 
-.fifth {
-  background-position: 0px calc(-4*440px/7);
-}
 #pain-and-suffering {
-  background-image: url("Pain_and_Suffering.png");
+  background-image: url("icons/Pain_and_Suffering.png");
 }
 #paralysis {
-  background-image: url("Paralysis.png");
+  background-image: url("icons/Paralysis.png");
 }
 
-.sixth {
-  background-position: 0px calc(-5*440px/7);
-}
 #psychic-horror {
-  background-image: url("Psychic_Horror.png");
+  background-image: url("icons/Psychic_Horror.png");
 }
 #sin-and-punishment {
-  background-image: url("Sin_and_Punishment.png");
+  background-image: url("icons/Sin_and_Punishment.png");
 }
 #shadowy-apparition {
-  background-image: url("Shadowy_Apparition.png");
+  background-image: url("icons/Shadowy_Apparition.png");
 }
 
-.seventh {
-  background-position: 0px calc(-6*440px/7);
-}
-
-#power-word-shield {
-  background-image: url("Power_Word_Shield.png");
+#power-word-shield, #improved-power-word-shield {
+  background-image: url("icons/Power_Word_Shield.png");
 }
 
 #twin-disciplines {
-  background-image: url("Twin_Disciplines.png");
+  background-image: url("icons/Twin_Disciplines.png");
 }
 
 #mental-agility {
-  background-image: url("Mental_Agility.png");
+  background-image: url("icons/Mental_Agility.png");
 }
 
 #evangelism {
-  background-image: url("Evangelism.png");
+  background-image: url("icons/Evangelism.png");
 }
 
 #inner-fire {
-  background-image: url("Inner_Fire.png");
+  background-image: url("icons/Inner_Fire.png");
 }
 
 #soul-warding {
-  background-image: url("Soul_Warding.png");
+  background-image: url("icons/Soul_Warding.png");
 }
 
 #guardian-spirit {
-  background-image: url("Guardian_Spirit.jpg");
+  background-image: url("icons/Guardian_Spirit.jpg");
 }
 
-#renew {
-  background-image: url("Renew.png");
+#improved-renew{
+  background-image: url("icons/Renew.png");
 }
 
-#greater-heal {
-  background-image: url("Greater_Heal.png");
+#empowered-healing {
+  background-image: url("icons/Greater_Heal.png");
 }
 
 #divine-fury {
-  background-image: url("Divine_Fury.png");
+  background-image: url("icons/Divine_Fury.png");
 }
 
 #desperate-prayer {
-  background-image: url("Desperate_Prayer.png");
+  background-image: url("icons/Desperate_Prayer.png");
 }
 
 #surge-of-light {
-  background-image: url("Surge_of_Light.png");
+  background-image: url("icons/Surge_of_Light.png");
 }
 
 #inspiration {
-  background-image: url("Inspiration.png");
+  background-image: url("icons/Inspiration.png");
 }

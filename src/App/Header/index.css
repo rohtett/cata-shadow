@@ -18,7 +18,7 @@ header > div {
   align-items: center;
 }
 #logo div {
-  background-image: url("logo.jpg");
+  background-image: url("../Talents/icons/Shadow_Word_Pain.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   margin: 16px;

@@ -1,6 +1,7 @@
 import "./index.css";
+import Viewer from "../Viewer";
 
-const Rotation = () => {
+const Rotation = (props:any) => {
   return (
     <article>
     <section id="rotation">

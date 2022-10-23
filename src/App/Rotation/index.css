@@ -17,29 +17,29 @@
 }
 
 #shadowfiend {
-  background-image: url("Shadowfiend.jpg");
+  background-image: url("../Talents/icons/Shadowfiend.jpg");
 }
 
 #archangel {
-  background-image: url("Archangel.jpg");
+  background-image: url("../Talents/icons/Archangel.jpg");
 }
 
 #stopwatch {
-  background-image: url("Pocketwatch.jpg");
+  background-image: url("../Talents/icons/Pocketwatch.jpg");
 }
 
 #gear-cog {
-  background-image: url("Gear_Cog.jpg");
+  background-image: url("../Talents/icons/Gear_Cog.jpg");
 }
 
 #mind-flay {
-  background-image: url("Mind_Flay.jpg");
+  background-image: url("../Talents/icons/Mind_Flay.jpg");
 }
 
 #mind-spike {
-  background-image: url("Mind_Spike.jpg");
+  background-image: url("../Talents/icons/Mind_Spike.jpg");
 }
 
-#mind-blast {
-  background-image: url("Mind_Blast.jpg");
+#mind-blast, #improved-mind-blast {
+  background-image: url("../Talents/icons/Mind_Blast.jpg");
 }

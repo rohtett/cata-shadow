@@ -9,12 +9,30 @@ import Stats from "./Stats/index";
 import Consumables from "./Consumables/index";
 import Footer from "./Footer/index";
 
-const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
 
 const App = () => {
   const [contents, setContents] = useState("introduction");
   const [menus, showMenus] = useState("none");
   const navigate = useNavigate();
+
+  const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
+
+  const [viewer, setViewer] = useState([{spell:{mana:null,range:null,cast:null,cooldown:null},info:[null,null,null],name:null,id:null},0]);
+  //Mouse position tracker from:
+  //https://codingbeautydev.com/blog/react-get-mouse-position/
+  const [mousePos, setMousePos] = useState({x:0,y:0});
+  useEffect(() => {
+    const handleMouseMove = (event:any) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener(
+        'mousemove',
+        handleMouseMove
+      );
+    };
+  }, []);
 
   useEffect(() => {
     const article = document.querySelector("article") as HTMLInputElement;
@@ -30,16 +48,16 @@ const App = () => {
       <Header />
       <div id="wrapper">
         <Routes>
-          <Route path = "/cata-shadow" element = { <Introduction /> }
+          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/talents" element = { <Talents /> }
+          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/rotation" element = { <Rotation /> }
+          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/stats" element = { <Stats /> }
+          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
             key = { document.location.href }
           />
           <Route path = "/cata-shadow/consumables" element = { <Consumables /> }

@@ -28,6 +28,7 @@
   display: block;
 }
 .spell-border {
+  cursor: help;
   display: inline-flex;
   margin-right: 5px;
 }
@@ -37,7 +38,8 @@
   font-weight: normal;
   padding: 15px;
   color: orange;
-  display: none;
+  opacity: 0;
+  flex-direction: column;
   width: 250px;
   z-index: 10;
   margin-top: 10px;
@@ -48,8 +50,9 @@
 }
 
 .spell-tooltip-title {
-  color: white;
+  color: #bbb;
   font-size: 1em;
+  font-weight: bolder;
 }
 .tooltip-table {
   width: 100%;
@@ -64,20 +67,20 @@
 }
 
 #vampiric-embrace {
-  background-image: url("vampiric_embrace.jpg");
+  background-image: url("../Talents/icons/Vampiric_Embrace.jpg");
 }
 #shadow-word-death {
-  background-image: url("shadow_word_death.jpg");
+  background-image: url("../Talents/icons/Shadow_Word_Death.jpg");
 }
 #dispersion {
-  background-image: url("dispersion.jpg");
+  background-image: url("../Talents/icons/Dispersion.jpg");
 }
 #mass-dispel {
-  background-image: url("mass_dispel.jpg");
+  background-image: url("../Talents/icons/Mass_Dispel.jpg");
 }
 
 #mind-control {
-  background-image: url("../Rotation/Mind_Control.jpg");
+  background-image: url("../Talents/icons/Mind_Control.jpg");
 }
 
 #contents li {

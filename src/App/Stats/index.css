@@ -2,16 +2,16 @@
   display: flex;
 }
 
-#devouring-plague {
-  background-image: url("../Rotation/Devouring_Plague.jpg");
+#devouring-plague, #improved-devouring-plague {
+  background-image: url("../Talents/icons/Devouring_Plague.jpg");
 }
 
-#shadow-word-pain {
-  background-image: url("../../../public/logo.jpg");
+#shadow-word-pain, #improved-shadow-word-pain {
+  background-image: url("../Talents/icons/Shadow_Word_Pain.jpg");
 }
 
 #vampiric-touch {
-  background-image: url("../Rotation/Vampiric_Touch.jpg");
+  background-image: url("../Talents/icons/Vampiric_Touch.jpg");
 }
 
 .tableContainer {

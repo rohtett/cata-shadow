@@ -1,7 +1,8 @@
 import "./index.css";
+import Viewer from "../Viewer";
 import Table from "./Table/index";
 
-const Stats = () => {
+const Stats = (props:any) => {
   return (
     <article>
       <section>
