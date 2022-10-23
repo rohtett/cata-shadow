@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import "./index.css";
-import Viewer from "../Viewer";
 import Talent from "./Talent";
 import { db } from "../../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
@@ -38,19 +36,18 @@ const Talents = (props:any) => {
   return (
     <article id="talents">
     <h3>Talents</h3>
-      <Viewer mousePos={props.mousePos} viewer={props.viewer} />
       <div>
         <section id="discipline">
           <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div>Discipline</h4>
-          <div className="discipline"></div>
+          <div className="talent-tree discipline"></div>
         </section>
         <section id="holy">
           <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div>Holy</h4>
-          <div className="holy"></div>
+          <div className="talent-tree holy"></div>
         </section>
         <section id="shadow">
           <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div>Shadow</h4>
-          <div className="shadow">
+          <div className="talent-tree shadow">
           { talentInfo? (
             talentInfo.map((talent:any)=> (
               <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer}/>

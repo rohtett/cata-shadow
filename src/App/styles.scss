@@ -1,0 +1,389 @@
+#container {
+  display: block;
+  width: 100%;
+  & > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & header {
+    background-color: #101010;
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    z-index: 1;
+    & > div {
+      width: 1136px;
+      margin-left: auto;
+      margin-right: auto;
+      & #logo {
+        display: flex;
+        align-items: center;
+        & h2 {
+          margin: 0px;
+        }
+        & div {
+          background-image: url("media/icons/Shadow_Word_Pain.jpg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin: 16px;
+          height: 35px;
+          width: 35px;
+          border: 1px solid #bbb;
+          border-radius: 5px;
+        }
+      }
+      & nav {
+        display: flex;
+        align-items: center;
+      }
+      & ul {
+        display: flex;
+        height: 50px;
+        padding-left: 0px;
+        list-style-type: none;
+        padding-right: 16px;
+      }
+      & a {
+        padding: 10px;
+        align-items: center;
+        color: #bbb;
+      }
+    }
+  }
+  & #wrapper {
+    position: relative;
+    top: 90px;
+    max-width: 1136px;
+    display: flex;
+    & article {
+      min-height: 110vh;
+      width: 950px;
+      padding-left: 40px;
+      text-align: justify;
+      & #spells {
+          & ul {
+            & li {
+              display: flex;
+              & .spell-title {
+                padding-top: 15px;
+                padding-left: 5px;
+                font-weight: bolder;
+              }
+            & p {
+              margin-bottom: 0px;
+            }
+            .spell-border {
+              position: relative;
+              top: 10px;
+            }
+          }
+          & .spell-icon {
+            height: 30px;
+            width: 30px;
+            background-size: contain;
+            background-position: center;
+            border-radius: 4px;
+            z-index: -1;
+          }
+          & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+          & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
+          & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+          & #mass-dispel {background-image: url("media/icons/Mass_Dispel.jpg")}
+          & #mind-control {background-image: url("media/icons/Mind_Control.jpg")}
+        }
+      }
+      & #contents {
+        & li {
+          font-weight: bolder;
+        }
+      }
+      & #rotation {
+        & #shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
+        & #devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
+        & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
+        & #shadowfiend {background-image: url("media/icons/Shadowfiend.jpg")}
+        & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
+        & #archangel {background-image: url("media/icons/Archangel.jpg")}
+        & #stopwatch {background-image: url("media/icons/Pocketwatch.jpg")}
+        & #gear-cog {background-image: url("media/icons/Gear_Cog.jpg")}
+        & #mind-flay {background-image: url("media/icons/Mind_Flay.jpg")}
+        & #mind-spike {background-image: url("media/icons/Mind_Spike.jpg")}
+        & #mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
+        & h4 {
+        display: flex;
+        }
+        .inline-border {
+          display: inline-flex;
+          margin-right: 0px;
+          height: 25px;
+          width: 25px;
+          position: relative;
+          top: 5px;
+        }
+        .inline-icon {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      &#talents {
+        & > div {
+          display: flex;
+          justify-content: center;
+        }
+        & h4 {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0px;
+          padding-top: 5px;
+          padding-left: 10px;
+          padding-bottom: 10px;
+          border: 1px solid #444;
+          box-sizing: border-box;
+        }
+        & #power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
+        & #guardian-spirit {background-image: url("media/icons/Guardian_Spirit.jpg")}
+        & #shadow-word-pain {background-image: url("media//icons/Shadow_Word_Pain.jpg")}
+        & .talent-tree {
+          display: flex;
+          flex-wrap: wrap;
+          height: 440px;
+          width: 256px;
+          position: relative;
+          z-index: 0;
+          overflow-y: hidden;
+          &.discipline {background-image: url("media/PriestDiscipline.png")}
+          &.holy {background-image: url("media/PriestHoly.png")}
+          &.shadow {background-image: url("media/PriestShadow.png")}
+          & .talent {
+            width: 44px;
+            height: 44px;
+            margin: 10px;
+            position: relative;
+            & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+            & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+            & #improved-shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
+            & #improved-devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
+            & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
+            & #improved-mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
+            & #darkness {background-image: url("media/icons/Darkness.png")}
+            & #veiled-shadows {background-image: url("media/icons/Veiled_Shadows.png")}
+            & #improved-psychic-scream {background-image: url("media/icons/Improved_Psychic_Scream.png")}
+            & #twisted-faith {background-image: url("media/icons/Twisted_Faith.png")}
+            & #shadowform {background-image: url("media/icons/Shadowform.png")}
+            & #phantasm {background-image: url("media/icons/Phantasm.png")}
+            & #harnessed-shadows {background-image: url("media/icons/Harnessed_Shadows.png")}
+            & #silence {background-image: url("media/icons/Silence.png")}
+            & #masochism {background-image: url("media/icons/Masochism.png")}
+            & #mind-melt {background-image: url("media/icons/Mind_Melt.png")}
+            & #pain-and-suffering {background-image: url("media/icons/Pain_and_Suffering.png")}
+            & #paralysis {background-image: url("media/icons/Paralysis.png")}
+            & #psychic-horror {background-image: url("media/icons/Psychic_Horror.png")}
+            & #sin-and-punishment {background-image: url("media/icons/Sin_and_Punishment.png")}
+            & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
+            & #improved-power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
+            & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
+            & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
+            & #evangelism {background-image: url("media/icons/Evangelism.png")}
+            & #inner-fire {background-image: url("media/icons/Inner_Fire.png")}
+            & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
+            & #improved-renew{background-image: url("media/icons/Renew.png")}
+            & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
+            & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
+            & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
+            & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
+            & #inspiration {background-image: url("media/icons/Inspiration.png")}
+            &.empty-talent {
+              opacity: 0;
+            }
+            & > div {
+              position: relative;
+              margin: auto;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              z-index: -1;
+            }
+          }
+        }
+      }
+      & #haste-caps {
+        & h4 {
+          display: flex;
+        }
+        & #devouring-plague {
+          background-image: url("media/icons/Devouring_Plague.jpg");
+        }
+
+        & #shadow-word-pain {
+          background-image: url("media/icons/Shadow_Word_Pain.jpg");
+        }
+
+        & #vampiric-touch {
+          background-image: url("media/icons/Vampiric_Touch.jpg");
+        }
+        & .tableContainer {
+          width: 100%;
+          display: flex;
+          &  table {
+            margin: 10px;
+          }
+          & table, th, td {
+            border: 1px solid #bbb;
+            border-collapse: collapse;
+          }
+          & td {
+            width: 150px;
+            text-align: right;
+          }
+          & th {
+            width: 200px;
+            text-align: left
+          }
+        }
+      }
+    }
+    & .spell-border {
+      cursor: help;
+      display: inline-flex;
+      margin-right: 5px;
+    }
+    & #modalMenu {
+      display: none;
+    }
+    & #sideMenu {
+      padding-right: 40px;
+    }
+    & nav ul {
+      list-style-type: none;
+    }
+    & input {
+      display: none;
+      &:checked + label {
+        color: #bbb;
+        font-weight: bolder;
+      }
+    }
+    & label {
+      color: #444;
+    }
+    & .spell-border {
+      height: 35px;
+      width: 35px;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("border.png");
+      background-repeat: no-repeat;
+    }
+    & .spell-icon {
+      height: 30px;
+      width: 30px;
+      background-size: contain;
+      border-radius: 4px;
+      z-index: -1;
+    }
+  }
+  & .spell-tooltip {
+    background-color: rgba(16, 16, 16, 0.8);
+    font-weight: normal;
+    padding: 15px;
+    color: orange;
+    opacity: 0;
+    flex-direction: column;
+    width: 250px;
+    z-index: 10;
+    margin-top: 10px;
+    position: absolute;
+    border-radius: 4px;
+    border: 1px solid #444;
+    font-size: 0.8em;
+    & .tooltip-table {
+      width: 100%;
+      color: #bbb;
+      & td {
+        border-style: none;
+        &:nth-child(2n) {
+          text-align: right;
+        }
+      }
+    }
+    & .spell-tooltip-title {
+      margin-bottom: 5px;
+      color: #bbb;
+      font-size: 1em;
+      font-weight: bolder;
+    }
+  }
+  & footer {
+    position: relative;
+    top: 100px;
+    padding-bottom: 5px;
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 576px) {
+  header {
+    & #logo {
+      position: relative;
+      left: 50px;
+    }
+  }
+  #wrapper {
+    & article {
+      &#talents > div {
+        flex-wrap: wrap-reverse;
+      }
+    }
+    flex-direction: row-reverse;
+    & article {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    & #sideMenu {
+      display: none;
+    }
+    & #modalMenu {
+      display: block;
+      padding: 0px;
+      width: 0px;
+    }
+    & #modalMenu #modalIcon {
+      background-image: url("media/hamburger.png");
+      filter: invert(95%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(83%) contrast(80%);
+      background-size: 35px 35px;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      padding: 10px;
+      top: 17.5px;
+      left: 10px;
+      height: 35px;
+      width: 35px;
+      z-index: 2;
+    }
+    & #menuDisplay {
+      padding-left: 70px;
+      box-shadow: 20px 0px 60px -50px #aaaaaa;
+      background-color: #101010;
+      height: 100vh;
+      width: 270px;
+      position: fixed;
+      top: 74px;
+      z-index: 1;
+    }
+    & #modalMenu li {
+      position: relative;
+      top: 40px;
+      height: 30px;
+    }
+    & #modalMenu label {
+      color: #bbb;
+    }
+  }
+}

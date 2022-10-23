@@ -1,7 +1,7 @@
 const Viewer = (props:any) => {
   return (
     <div className="spell-tooltip"
-      style={{position: "absolute", left: props.mousePos.x-285, top: props.mousePos.y-80, opacity: props.viewer[1]}}>
+      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y, opacity: props.viewer[1]}}>
       <div className="spell-tooltip-title">{props.viewer[0].name}</div>
       {props.viewer[0].spell? (
         <table className="tooltip-table">

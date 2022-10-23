@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./index.css";
+import "./styles.scss";
 import Header from "./Header/index";
 import Introduction from "./Introduction/index";
 import Talents from "./Talents/index";
@@ -8,7 +8,7 @@ import Rotation from "./Rotation/index";
 import Stats from "./Stats/index";
 import Consumables from "./Consumables/index";
 import Footer from "./Footer/index";
-
+import Viewer from "./Viewer";
 
 const App = () => {
   const [contents, setContents] = useState("introduction");
@@ -45,6 +45,7 @@ const App = () => {
 
   return (
     <div id="container">
+    <Viewer mousePos={mousePos} viewer={viewer} />
       <Header />
       <div id="wrapper">
         <Routes>

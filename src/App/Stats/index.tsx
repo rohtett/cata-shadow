@@ -1,5 +1,3 @@
-import "./index.css";
-import Viewer from "../Viewer";
 import Table from "./Table/index";
 
 const Stats = (props:any) => {

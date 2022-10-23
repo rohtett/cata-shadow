@@ -1,6 +1,3 @@
-import "./index.css";
-import Viewer from "../Viewer";
-
 const Rotation = (props:any) => {
   return (
     <article>
