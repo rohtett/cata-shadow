@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Talent from "../Talents/Talent";
-import "./index.css";
+import { db } from "../../firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 
 const Introduction = (props:any) => {
   return (
     <article>
+    <img id="banner" />
       <section>
         <h3>Introduction</h3>
         <p>Shadow Priest has a rocky start to the expansion; having two very strong healing specialisations to them, Shadow became very underappreciated. By Dragon Soul patch, Shadow can easily be recognised as a strong damage spec, matching and even exceeding some of its ranged competitors. It presents the player with a rotation that is both easy to understand and easy to master.</p>

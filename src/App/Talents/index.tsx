@@ -3,26 +3,27 @@ import Talent from "./Talent";
 import { db } from "../../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
-
-const discOne = [["Improved Power Word: Shield", "power-word-shield", "Increases the damage absorbed by your Power Word: Shield by 10%."],
-["Twin Disciplines", "twin-disciplines", "Increases your Shadow and Holy spell damage and healing by 2/4/6%."],
-["Mental Agility", "mental-agility", "Reduces the mana cost of your instant cast spells by 4/8/12%."], undefined];
-
-const discTwo = [["Evangelism", "evangelism", "When you cast Smite, Holy Fire or Mind Flay you gain Evangelism. Stacks up to 5 times. Lasts for 20 sec. Evangelism (Smite, Holy Fire): Increases the damage done by your Smite, Holy Fire and Penance spells by 2/4% and reduces the mana cost of these spells by 3/6%. Dark Evangelism (Mind Flay): Increases the damage done by your Period Shadow spells by 1/2%."],
-["Archangel", "archangel", "Consumes your Evangelism effects, causing an effect dependigng on what type of Evangelism effect was consumed. Archangel (Evangelism) - Instantly restores 1% of your total mana and increases your healing done by 3% for each stack. Lasts 18 sec. 30 sec cooldown. Dark Archangel (Dark Evangelism) - Instantly restores 5% of your total mana and increases the damage done by your Mind Flay, Mind Spike, Mind Blast and Shadow Word: Death by 4% for each stack. Lasts 18 sec. 90 sec cooldown."],
-["Inner Sanctum", "inner-fire", "Your Inner Fire also reduces all spell damage taken by 2/4/6% while it is active, and the movement speed bonus of your Inner Will is increased by 2/4/6%."],
-["Soul Warding", "soul-warding", "Reduces the cooldown of your Power Word: Shield ability by 1/2 sec."]];
-
-const holyOne = [["Improved Renew", "renew", "Increases the amount healed by your Renew spell by 5/10%."],
-["Empowered Healing", "greater-heal", "Increases the healing done by your Flash Heal, Heal, Binding Heal and Greater Heal by 5/10/15%."],
-["Divine Fury", "divine-fury", "Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.15/0.35/0.5 sec."], undefined];
-
-const holyTwo = [undefined,
-["Desperate Prayer", "desperate-prayer", "Instantly heals the caster for 30% of their total health."],
-["Surge of Light", "surge-of-light", "You have a 3/6% chance when you Smite, Heal, Flash Heal, Binding Heal or Greater Heal to cause your next Flash Heal to be instant cast and cost no mana."],
-["Inspiration", "inspiration", "Reduces your target's physical damage taken by 5/10% for 15 sec after getting a critical effect from your Flash Heal, Greater Heal, Binding Heal, Penance, Prayer of Mending, Prayer of Healing or Circle of Healing spell. "]];
+const dungeon = {
+  name:"dungeon",
+  shadow:[3,2,2,undefined,0,3,2,2,undefined,1,2,2,0,1,2,2,2,1,0,undefined,0,2,3,undefined,undefined,1,undefined,undefined],
+  discipline:[1,3,2,undefined,2,1,0,0],
+  holy:[0,0,0,undefined,undefined,0,0,0]
+};
+const raid = {
+  name:"raid",
+  shadow:[3,2,2,undefined,0,3,2,2,undefined,1,0,2,0,1,2,2,2,1,0,undefined,0,2,3,undefined,undefined,1,undefined,undefined],
+  discipline:[0,3,3,undefined,2,1,0,0],
+  holy:[0,0,0,undefined,undefined,0,0,0]
+}
+const pvp = {
+  name:"pvp",
+  shadow:[3,0,2,undefined,2,0,2,2,undefined,1,2,2,1,1,2,2,1,1,2,undefined,1,2,3,undefined,undefined,1,undefined,undefined],
+  discipline:[2,3,0,undefined,2,1,0,0],
+  holy:[0,0,0,undefined,undefined,0,0,0]
+}
 
 const Talents = (props:any) => {
+  const [build, setBuild] = useState(dungeon);
   const [talentInfo, setTalentInfo] = useState<any>();
   const talentCollectionRef = collection(db, "talent-info");
   useEffect(() => {
@@ -36,21 +37,71 @@ const Talents = (props:any) => {
   return (
     <article id="talents">
     <h3>Talents</h3>
-      <div>
+      <ul id="build-planner">
+        <input type="radio" name="build" id="dungeon"
+          checked={build.name=="dungeon"}
+          onChange={()=> {
+            setBuild(dungeon)
+          }}
+        />
+        <label htmlFor="dungeon" className="build">
+          <li>
+            <div className="build-title">Dungeon Build</div>
+            <p>Recommended build included with utility for open-world content and dungeons, as well as certain raid encounters.</p>
+          </li>
+        </label>
+        <input type="radio" name="build" id="raid"
+          checked={build.name=="raid"}
+          onChange={()=> {
+            setBuild(raid)
+          }}
+        />
+        <label htmlFor="raid" className="build">
+          <li>
+            <div className="build-title">Raid Build</div>
+            <p>Recommended build purposed for raiding and survivability.</p>
+          </li>
+        </label>
+        <input type="radio" name="build" id="pvp"
+          checked={build.name=="pvp"}
+          onChange={()=> {
+            setBuild(pvp)
+          }}
+        />
+        <label htmlFor="pvp"className="build">
+          <li>
+            <div className="build-title">PvP Build</div>
+            <p>This build sacrifices a lot of the damaging talents used in the other builds in favour of increased CC and survivability.</p>
+          </li>
+        </label>
+      </ul>
+      <div id="talent-builder">
         <section id="discipline">
-          <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div>Discipline</h4>
-          <div className="talent-tree discipline"></div>
+          <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div><div><span>Discipline</span><span>{build.discipline.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
+          <div className="talent-tree discipline">
+          { talentInfo? (
+            talentInfo.slice(28,36).map((talent:any, index:number)=> (
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.discipline[index]}/>
+            ))
+          ):(<div>No Data</div>) }
+          </div>
         </section>
         <section id="holy">
-          <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div>Holy</h4>
-          <div className="talent-tree holy"></div>
+          <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div><div><span>Holy</span><span>{build.holy.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
+          <div className="talent-tree holy">
+          { talentInfo? (
+            talentInfo.slice(36,44).map((talent:any, index:number)=> (
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.holy[index]}/>
+            ))
+          ):(<div>No Data</div>) }
+          </div>
         </section>
         <section id="shadow">
-          <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div>Shadow</h4>
+          <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div><div><span>Shadow</span><span>{build.shadow.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree shadow">
           { talentInfo? (
-            talentInfo.map((talent:any)=> (
-              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer}/>
+            talentInfo.slice(0,28).map((talent:any, index:number)=> (
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.shadow[index]}/>
             ))
           ):(<div>No Data</div>) }
           </div>

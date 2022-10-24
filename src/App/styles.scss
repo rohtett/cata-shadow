@@ -62,37 +62,46 @@
       width: 950px;
       padding-left: 40px;
       text-align: justify;
+      & #banner {
+        margin-top: 20px;
+        background-image: url("media/Preview.jpg");
+        background-position: -520px -425px;
+        width: 100%;
+        height: 400px;
+      }
       & #spells {
-          & ul {
-            & li {
-              display: flex;
-              & .spell-title {
-                padding-top: 15px;
-                padding-left: 5px;
-                font-weight: bolder;
-              }
-            & p {
-              margin-bottom: 0px;
+        & ul {
+          padding-left: 20px;
+          padding-right: 20px;
+          & li {
+            display: flex;
+            & .spell-title {
+              padding-top: 15px;
+              padding-left: 5px;
+              font-weight: bolder;
             }
-            .spell-border {
-              position: relative;
-              top: 10px;
-            }
+          & p {
+            margin-bottom: 0px;
           }
-          & .spell-icon {
-            height: 30px;
-            width: 30px;
-            background-size: contain;
-            background-position: center;
-            border-radius: 4px;
-            z-index: -1;
+          .spell-border {
+            position: relative;
+            top: 10px;
           }
-          & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
-          & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
-          & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
-          & #mass-dispel {background-image: url("media/icons/Mass_Dispel.jpg")}
-          & #mind-control {background-image: url("media/icons/Mind_Control.jpg")}
         }
+        & .spell-icon {
+          height: 30px;
+          width: 30px;
+          background-size: contain;
+          background-position: center;
+          border-radius: 4px;
+          z-index: -1;
+        }
+        & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+        & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
+        & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+        & #mass-dispel {background-image: url("media/icons/Mass_Dispel.jpg")}
+        & #mind-control {background-image: url("media/icons/Mind_Control.jpg")}
+      }
       }
       & #contents {
         & li {
@@ -111,9 +120,6 @@
         & #mind-flay {background-image: url("media/icons/Mind_Flay.jpg")}
         & #mind-spike {background-image: url("media/icons/Mind_Spike.jpg")}
         & #mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
-        & h4 {
-        display: flex;
-        }
         .inline-border {
           display: inline-flex;
           margin-right: 0px;
@@ -128,85 +134,155 @@
         }
       }
       &#talents {
-        & > div {
-          display: flex;
-          justify-content: center;
-        }
         & h4 {
           display: flex;
           align-items: center;
           margin-bottom: 0px;
+          padding: 10px;
           padding-top: 5px;
-          padding-left: 10px;
-          padding-bottom: 10px;
           border: 1px solid #444;
           box-sizing: border-box;
+          & .spell-border {
+            height: 40px;
+            width: 40px;
+            align-items:flex-start;
+            padding-top: 1px;
+          }
+          & > div:nth-child(2) {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+          }
+        }
+        & ul#build-planner {
+          list-style-type: none;
+          display: flex;
+          justify-content: space-between;
+          padding-left: 0;
+          & input {
+            display: none;
+          }
+          & label.build {
+            flex-basis: 100%;
+            margin: 10px;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            border: 1px solid #444;
+            & div.build-title {
+              color: #bbb;
+              text-align: center;
+              font-weight: bolder;
+            }
+          }
+          & input:selected + label.build {
+            color: pink;
+            border-color: #bbb;
+          }
+        }
+        & #talent-builder {
+          display: flex;
+          justify-content: center;
+          & .talent-tree {
+            display: flex;
+            flex-wrap: wrap;
+            height: 420px;
+            width: 256px;
+            position: relative;
+            z-index: 0;
+            overflow-y: hidden;
+            padding-top: 15px;
+            align-content: flex-start;
+            justify-content: center;
+            &.discipline {background-image: url("media/PriestDiscipline.png")}
+            &.holy {background-image: url("media/PriestHoly.png")}
+            &.shadow {background-image: url("media/PriestShadow.png")}
+            &h4 {
+              display: flex;
+              justify-content: space-between;
+            }
+            & .talent {
+              width: 44px;
+              height: 44px;
+              margin-top: 7.5px;
+              margin-bottom: 7.5px;
+              margin-right: 0px;
+              position: relative;
+              & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+              & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+              & #improved-shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
+              & #improved-devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
+              & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
+              & #improved-mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
+              & #darkness {background-image: url("media/icons/Darkness.png")}
+              & #veiled-shadows {background-image: url("media/icons/Veiled_Shadows.png")}
+              & #improved-psychic-scream {background-image: url("media/icons/Improved_Psychic_Scream.png")}
+              & #twisted-faith {background-image: url("media/icons/Twisted_Faith.png")}
+              & #shadowform {background-image: url("media/icons/Shadowform.png")}
+              & #phantasm {background-image: url("media/icons/Phantasm.png")}
+              & #harnessed-shadows {background-image: url("media/icons/Harnessed_Shadows.png")}
+              & #silence {background-image: url("media/icons/Silence.png")}
+              & #masochism {background-image: url("media/icons/Masochism.png")}
+              & #mind-melt {background-image: url("media/icons/Mind_Melt.png")}
+              & #pain-and-suffering {background-image: url("media/icons/Pain_and_Suffering.png")}
+              & #paralysis {background-image: url("media/icons/Paralysis.png")}
+              & #psychic-horror {background-image: url("media/icons/Psychic_Horror.png")}
+              & #sin-and-punishment {background-image: url("media/icons/Sin_and_Punishment.png")}
+              & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
+              & #improved-power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
+              & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
+              & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
+              & #evangelism {background-image: url("media/icons/Evangelism.png")}
+              & #inner-fire {background-image: url("media/icons/Inner_Fire.png")}
+              & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
+              & #improved-renew{background-image: url("media/icons/Renew.png")}
+              & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
+              & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
+              & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
+              & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
+              & #inspiration {background-image: url("media/icons/Inspiration.png")}
+              &.real-talent {
+                transition: filter 0.4s;
+                & .spell-icon {
+                  transition: filter 0.4s;
+                }
+                & .greyscale {
+                  filter: grayscale(1);
+                }
+                &+ div {
+                  transition: color 0.4s;
+                  cursor: default;
+                  padding: 1px;
+                  height: 17px;
+                  width: 12px;
+                  border: 1px solid #bbb;
+                  box-sizing: border-box;
+                  text-align: center;
+                  font-size: 0.7em;
+                  background-color: #444;
+                  position: relative;
+                  left: -10px;
+                  top: 37px;
+                }
+              }
+              &.empty-talent {
+                margin-left: 12px;
+                opacity: 0;
+              }
+              & > div:nth-child(odd) {
+                position: relative;
+                margin: auto;
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                z-index: -1;
+              }
+            }
+          }
         }
         & #power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
         & #guardian-spirit {background-image: url("media/icons/Guardian_Spirit.jpg")}
         & #shadow-word-pain {background-image: url("media//icons/Shadow_Word_Pain.jpg")}
-        & .talent-tree {
-          display: flex;
-          flex-wrap: wrap;
-          height: 440px;
-          width: 256px;
-          position: relative;
-          z-index: 0;
-          overflow-y: hidden;
-          &.discipline {background-image: url("media/PriestDiscipline.png")}
-          &.holy {background-image: url("media/PriestHoly.png")}
-          &.shadow {background-image: url("media/PriestShadow.png")}
-          & .talent {
-            width: 44px;
-            height: 44px;
-            margin: 10px;
-            position: relative;
-            & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
-            & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
-            & #improved-shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
-            & #improved-devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
-            & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
-            & #improved-mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
-            & #darkness {background-image: url("media/icons/Darkness.png")}
-            & #veiled-shadows {background-image: url("media/icons/Veiled_Shadows.png")}
-            & #improved-psychic-scream {background-image: url("media/icons/Improved_Psychic_Scream.png")}
-            & #twisted-faith {background-image: url("media/icons/Twisted_Faith.png")}
-            & #shadowform {background-image: url("media/icons/Shadowform.png")}
-            & #phantasm {background-image: url("media/icons/Phantasm.png")}
-            & #harnessed-shadows {background-image: url("media/icons/Harnessed_Shadows.png")}
-            & #silence {background-image: url("media/icons/Silence.png")}
-            & #masochism {background-image: url("media/icons/Masochism.png")}
-            & #mind-melt {background-image: url("media/icons/Mind_Melt.png")}
-            & #pain-and-suffering {background-image: url("media/icons/Pain_and_Suffering.png")}
-            & #paralysis {background-image: url("media/icons/Paralysis.png")}
-            & #psychic-horror {background-image: url("media/icons/Psychic_Horror.png")}
-            & #sin-and-punishment {background-image: url("media/icons/Sin_and_Punishment.png")}
-            & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
-            & #improved-power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
-            & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
-            & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
-            & #evangelism {background-image: url("media/icons/Evangelism.png")}
-            & #inner-fire {background-image: url("media/icons/Inner_Fire.png")}
-            & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
-            & #improved-renew{background-image: url("media/icons/Renew.png")}
-            & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
-            & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
-            & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
-            & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
-            & #inspiration {background-image: url("media/icons/Inspiration.png")}
-            &.empty-talent {
-              opacity: 0;
-            }
-            & > div {
-              position: relative;
-              margin: auto;
-              width: 40px;
-              height: 40px;
-              border-radius: 5px;
-              z-index: -1;
-            }
-          }
-        }
       }
       & #haste-caps {
         & h4 {
@@ -258,15 +334,19 @@
     & nav ul {
       list-style-type: none;
     }
-    & input {
+    & input.menu {
       display: none;
+      &+ label {
+        cursor: pointer;
+        color: #444;
+        &:hover {
+          color: #bbb;
+        }
+      }
       &:checked + label {
         color: #bbb;
         font-weight: bolder;
       }
-    }
-    & label {
-      color: #444;
     }
     & .spell-border {
       height: 35px;
@@ -289,7 +369,8 @@
   & .spell-tooltip {
     background-color: rgba(16, 16, 16, 0.8);
     font-weight: normal;
-    padding: 15px;
+    padding: 10px;
+    padding-bottom: 20px;
     color: orange;
     opacity: 0;
     flex-direction: column;
@@ -310,11 +391,14 @@
         }
       }
     }
-    & .spell-tooltip-title {
+    & .spell-tooltip-header {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 5px;
       color: #bbb;
-      font-size: 1em;
-      font-weight: bolder;
+      &-title {
+        font-weight: bolder;
+      }
     }
   }
   & footer {
@@ -324,7 +408,35 @@
     font-size: 0.7em;
     text-align: center;
   }
+}
 
+@media (max-width: 973px) {
+  #talents {
+    & #talent-builder {
+      align-content: space-around;
+      height: 520px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      & section {
+        width: 256px;
+        flex: 1 1 220px;
+        &#discipline, &#holy {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  article#talents {
+    & ul#build-planner {
+      flex-wrap: wrap;
+    }
+    & div#talent-builder {
+      flex: none;
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -336,54 +448,67 @@
   }
   #wrapper {
     & article {
+      padding-left: 20px!important;
+      padding-right: 20px;
+      flex-direction: row-reverse;
       &#talents > div {
         flex-wrap: wrap-reverse;
       }
-    }
-    flex-direction: row-reverse;
-    & article {
-      padding-left: 20px;
-      padding-right: 20px;
+      & #haste-caps {
+        & .tableContainer {
+          flex-wrap: wrap;
+        }
+      }
     }
     & #sideMenu {
       display: none;
     }
     & #modalMenu {
-      display: block;
+      display: block!important;
       padding: 0px;
       width: 0px;
+      & #modalIcon {
+        background-size: 35px 35px;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: fixed;
+        padding: 10px;
+        top: 17.5px;
+        left: 10px;
+        height: 35px;
+        width: 35px;
+        z-index: 2;
+        display: block;
+        & .hamburger-row {
+          border-radius: 3px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          height: 5px;
+          width: 35px;
+          background-color: #bbb;
+        }
+      }
+      & #menuDisplay {
+        padding-left: 70px;
+        box-shadow: 20px 0px 60px -50px #aaaaaa;
+        background-color: #101010;
+        height: 100vh;
+        width: 270px;
+        position: fixed;
+        top: 74px;
+        z-index: 1;
+        & li {
+          position: relative;
+          top: 40px;
+          height: 30px;
+          & label {
+            color: #bbb;
+          }
+        }
+      }
     }
-    & #modalMenu #modalIcon {
-      background-image: url("media/hamburger.png");
-      filter: invert(95%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(83%) contrast(80%);
-      background-size: 35px 35px;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: fixed;
-      padding: 10px;
-      top: 17.5px;
-      left: 10px;
-      height: 35px;
-      width: 35px;
-      z-index: 2;
-    }
-    & #menuDisplay {
-      padding-left: 70px;
-      box-shadow: 20px 0px 60px -50px #aaaaaa;
-      background-color: #101010;
-      height: 100vh;
-      width: 270px;
-      position: fixed;
-      top: 74px;
-      z-index: 1;
-    }
-    & #modalMenu li {
-      position: relative;
-      top: 40px;
-      height: 30px;
-    }
-    & #modalMenu label {
-      color: #bbb;
-    }
+  }
+  footer {
+    max-width: 100vw;
   }
 }

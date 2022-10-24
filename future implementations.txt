@@ -1,12 +1,9 @@
 general:
-  > side menu on desktop view display static
 
 talent page:
-  > cursor on each talent to indicate interactability
   > border or colour effect on talent icon mouseover
   > show default build on load
-  > preset builds on side
-  > talents on mouseover
+  > pre-set builds on side
 
 rotation page:
   > spell tooltip on spell icon hover

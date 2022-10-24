@@ -17,7 +17,7 @@ const App = () => {
 
   const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
 
-  const [viewer, setViewer] = useState([{spell:{mana:null,range:null,cast:null,cooldown:null},info:[null,null,null],name:null,id:null},0]);
+  const [viewer, setViewer] = useState({talent:{spell:{mana:null,range:null,cast:null,cooldown:null},info:[null,null,null],name:null,id:null},value:0});
   //Mouse position tracker from:
   //https://codingbeautydev.com/blog/react-get-mouse-position/
   const [mousePos, setMousePos] = useState({x:0,y:0});
@@ -33,19 +33,24 @@ const App = () => {
       );
     };
   }, []);
-
   useEffect(() => {
-    const article = document.querySelector("article") as HTMLInputElement;
-    const click = () => {
-      showMenus("none");
+    document.querySelector("#modalIcon")!.addEventListener("click", () => {
+      document.addEventListener("click", click);
+      if (menus == "none") {
+        showMenus("block")
+      }
+    })
+    const click = (ev:any) => {
+      if(ev.target != document.querySelector("#menuDisplay")) {
+        showMenus("none");
+      }
     }
-    article.addEventListener("click", click);
-    return () => article.removeEventListener("click", click);
+    return () => document.removeEventListener("click", click);
   })
 
   return (
     <div id="container">
-    <Viewer mousePos={mousePos} viewer={viewer} />
+      <Viewer mousePos={mousePos} viewer={viewer} />
       <Header />
       <div id="wrapper">
         <Routes>
@@ -75,7 +80,11 @@ const App = () => {
                 showMenus("block");
               }, 25);
             }}
-          />
+          >
+            <div className="hamburger-row"></div>
+            <div className="hamburger-row"></div>
+            <div className="hamburger-row"></div>
+          </div>
           <ul id="menuDisplay"
             style = {{ display: menus }}
           >
@@ -83,6 +92,7 @@ const App = () => {
               { menu.map((el:string[]) => (
                 <li key = { el[1] } >
                     <input
+                      className="menu"
                       name = "menu"
                       type = "radio"
                       value = { el[1] }
@@ -111,6 +121,7 @@ const App = () => {
               { menu.map((el:string[]) => (
                 <li key = { el[1] } >
                     <input
+                      className="menu"
                       name = "menu"
                       type = "radio"
                       value = { el[1] }
