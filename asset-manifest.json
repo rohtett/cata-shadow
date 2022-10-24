@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cata-shadow/static/css/main.e87a482f.css",
-    "main.js": "/cata-shadow/static/js/main.05e5a341.js",
+    "main.js": "/cata-shadow/static/js/main.c8acbd44.js",
     "static/js/787.47827543.chunk.js": "/cata-shadow/static/js/787.47827543.chunk.js",
     "static/media/Preview.jpg": "/cata-shadow/static/media/Preview.5843183004eb2d594bb2.jpg",
     "static/media/PriestDiscipline.png": "/cata-shadow/static/media/PriestDiscipline.511799f86c7701cc0248.png",
@@ -10,11 +10,11 @@
     "static/media/Pain_and_Suffering.png": "/cata-shadow/static/media/Pain_and_Suffering.0fbf64122b84ff5596ff.png",
     "index.html": "/cata-shadow/index.html",
     "main.e87a482f.css.map": "/cata-shadow/static/css/main.e87a482f.css.map",
-    "main.05e5a341.js.map": "/cata-shadow/static/js/main.05e5a341.js.map",
+    "main.c8acbd44.js.map": "/cata-shadow/static/js/main.c8acbd44.js.map",
     "787.47827543.chunk.js.map": "/cata-shadow/static/js/787.47827543.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e87a482f.css",
-    "static/js/main.05e5a341.js"
+    "static/js/main.c8acbd44.js"
   ]
 }
