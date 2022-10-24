@@ -161,6 +161,9 @@
           padding-left: 0;
           & input {
             display: none;
+            &:checked + label.build {
+              border-color: #bbb;
+            }
           }
           & label.build {
             flex-basis: 100%;
@@ -174,10 +177,6 @@
               text-align: center;
               font-weight: bolder;
             }
-          }
-          & input:selected + label.build {
-            color: pink;
-            border-color: #bbb;
           }
         }
         & #talent-builder {
@@ -233,7 +232,7 @@
               & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
               & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
               & #evangelism {background-image: url("media/icons/Evangelism.png")}
-              & #inner-fire {background-image: url("media/icons/Inner_Fire.png")}
+              & #inner-sanctum {background-image: url("media/icons/Inner_Fire.png")}
               & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
               & #improved-renew{background-image: url("media/icons/Renew.png")}
               & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
@@ -241,7 +240,9 @@
               & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
               & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
               & #inspiration {background-image: url("media/icons/Inspiration.png")}
+              & #archangel {background-image: url("media/icons/Archangel.jpg")}
               &.real-talent {
+                cursor: help;
                 transition: filter 0.4s;
                 & .spell-icon {
                   transition: filter 0.4s;
@@ -321,17 +322,20 @@
       }
     }
     & .spell-border {
-      cursor: help;
       display: inline-flex;
       margin-right: 5px;
     }
-    & #modalMenu {
-      display: none;
-    }
-    & #sideMenu {
-      padding-right: 40px;
-    }
-    & nav ul {
+    & nav {
+      &#modalMenu {
+        display: none;
+      }
+      &#sideMenu {
+        padding-right: 40px;
+          & input.menu label {
+          width: 100%;
+        }
+      }
+    & ul {
       list-style-type: none;
     }
     & input.menu {
@@ -348,6 +352,7 @@
         font-weight: bolder;
       }
     }
+  }
     & .spell-border {
       height: 35px;
       width: 35px;

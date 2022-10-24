@@ -33,13 +33,14 @@ const Talents = (props:any) => {
       console.log("fetched server");
     }
     fetchTalentInfo();
-  }, []);
+  }, [talentCollectionRef]);
   return (
     <article id="talents">
     <h3>Talents</h3>
+      <p>The majority of the recommended talents for PvE content is included within the Dungeon and Raid builds, however there is a little room for lee-way to adjust your build to your own preference. For example, picking up Psychic Horror instead of an extra point in Mental Agility.<br /><br />For PvP builds, there is also a few points of lee-way available to make your build be hybrid or more offensive!</p>
       <ul id="build-planner">
         <input type="radio" name="build" id="dungeon"
-          checked={build.name=="dungeon"}
+          checked={build.name==="dungeon"}
           onChange={()=> {
             setBuild(dungeon)
           }}
@@ -51,7 +52,7 @@ const Talents = (props:any) => {
           </li>
         </label>
         <input type="radio" name="build" id="raid"
-          checked={build.name=="raid"}
+          checked={build.name==="raid"}
           onChange={()=> {
             setBuild(raid)
           }}
@@ -63,7 +64,7 @@ const Talents = (props:any) => {
           </li>
         </label>
         <input type="radio" name="build" id="pvp"
-          checked={build.name=="pvp"}
+          checked={build.name==="pvp"}
           onChange={()=> {
             setBuild(pvp)
           }}
@@ -77,7 +78,7 @@ const Talents = (props:any) => {
       </ul>
       <div id="talent-builder">
         <section id="discipline">
-          <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div><div><span>Discipline</span><span>{build.discipline.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
+          <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div><div><span>Discipline</span><span>{build.discipline.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree discipline">
           { talentInfo? (
             talentInfo.slice(28,36).map((talent:any, index:number)=> (
@@ -87,7 +88,7 @@ const Talents = (props:any) => {
           </div>
         </section>
         <section id="holy">
-          <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div><div><span>Holy</span><span>{build.holy.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
+          <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div><div><span>Holy</span><span>{build.holy.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree holy">
           { talentInfo? (
             talentInfo.slice(36,44).map((talent:any, index:number)=> (
@@ -97,7 +98,7 @@ const Talents = (props:any) => {
           </div>
         </section>
         <section id="shadow">
-          <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div><div><span>Shadow</span><span>{build.shadow.reduce((sum, each) => {return each!=undefined? sum! + each: sum}, 0)}</span></div></h4>
+          <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div><div><span>Shadow</span><span>{build.shadow.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree shadow">
           { talentInfo? (
             talentInfo.slice(0,28).map((talent:any, index:number)=> (
@@ -107,6 +108,14 @@ const Talents = (props:any) => {
           </div>
         </section>
       </div>
+      <p>In order to optimise your PvP build to a more hybrid playability, you would have to gain the Improved Mind Blast talent, for which you could sacrifice a variety of talents. You will need a combination of up to three talent points from any of the three talents listed below:</p>
+      <ol>
+        <li>Twisted Faith (up to 1 point) – if by any chance you are probably well over hit-cap anyways in your PvE gear and don't have enough gold to reforge (but enough to get a respec).</li>
+        <li>Mind Melt (up to 1 points) – you will lose damage by taking this talent, however without DS-Tier set bonuses, the amount of damage you will lose is drastically reduced.</li>
+        <li>Phantasm (up to 2 points) – while this talent provides a lot of benefit in PvP, it has a very similar effect to the Discipline 4-piece bonus provided by the gear you wear.</li>
+        <li>Masochism (up to 2 points) – with high gear (and thus, mana regen), this talent may find benefit not included in either of these builds for casual PvE content such as dungeons.</li>
+        <li>Paralysis (up to 2 point) – with reduced cooldown on Mind Blast, you will be able to use this effect more often, and a 50% chance to proc it's effect isn't much to miss.</li>
+      </ol>
     </article>
   )
 }
