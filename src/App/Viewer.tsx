@@ -9,9 +9,10 @@ const Viewer = (props:any) => {
   useEffect(()=> {
     setPoints(props.viewer.points)
   }, [props.mousePos])
+
   return (
     <div className="spell-tooltip" id="Viewer"
-      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y, opacity: props.viewer.value+"%"}}>
+      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y+props.scrollPosition, opacity: props.viewer.value+"%"}}>
       <div className="spell-tooltip-header"><span className="spell-tooltip-header-title">{props.viewer.talent.name}</span><span>{"Rank "+(points)+"/"+props.viewer.talent.info.length}</span></div>
       {props.viewer.talent.spell? (
         <table className="tooltip-table">

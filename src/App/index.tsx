@@ -21,12 +21,19 @@ const App = () => {
   //Mouse position tracker from:
   //https://codingbeautydev.com/blog/react-get-mouse-position/
   const [mousePos, setMousePos] = useState({x:0,y:0});
+  const [scrollPosition,setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+};
   useEffect(() => {
     const handleMouseMove = (event:any) => {
       setMousePos({ x: event.clientX, y: event.clientY });
     };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener(
         'mousemove',
         handleMouseMove
@@ -50,7 +57,7 @@ const App = () => {
 
   return (
     <div id="container">
-      <Viewer mousePos={mousePos} viewer={viewer} />
+      <Viewer mousePos={mousePos} scrollPosition= {scrollPosition} viewer={viewer} />
       <Header />
       <div id="wrapper">
         <Routes>
