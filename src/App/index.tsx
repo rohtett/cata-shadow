@@ -4,7 +4,6 @@ import { db } from "../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
 import "./styles.scss";
-
 import Header from "./Header/index";
 import Introduction from "./Introduction/index";
 import Talents from "./Talents/index";
@@ -14,73 +13,66 @@ import Consumables from "./Consumables/index";
 import Footer from "./Footer/index";
 import Viewer from "./Viewer";
 
+const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
+
 const App = () => {
-  const [contents, setContents] = useState("introduction");
-  const [menus, showMenus] = useState("none");
   const navigate = useNavigate();
 
-  const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
-
+  const [contents, setContents] = useState("introduction");
   const [viewer, setViewer] = useState({talent:{spell:{mana:null,range:null,cast:null,cooldown:null},info:[null,null,null],name:null,id:null},value:0});
+
+  const [spec, setSpec] = useState<{main:any,off:any}>();
+
   //Mouse position tracker from:
   //https://codingbeautydev.com/blog/react-get-mouse-position/
   const [mousePos, setMousePos] = useState({x:0,y:0});
-  const [scrollPosition,setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-};
-
-const [spec, setSpec] = useState<{main:any,off:any}>();
-
-useEffect(() => {
-  if (!spec) {
-    const fetchTalentInfo = async() => {
-      const mainSpec = collection(db, "talent-shadow");
-      const offSpec = collection(db, "talent-discipline");
-      const offoffSpec= collection(db, "talent-holy");
-      const main = await getDocs(mainSpec);
-      const off = await getDocs(offSpec);
-      const offOff = await getDocs(offoffSpec);
-      setSpec({main:main.docs.map((doc:any) =>({...doc.data(), id:doc.id})), off:[off.docs.map((doc:any) =>({...doc.data(), id:doc.id})), offOff.docs.map((doc:any) =>({...doc.data(), id:doc.id}))]});
-      console.log("fetched server");
-    }
-    fetchTalentInfo();
+  const handleMouseMove = (event:any) => {
+    const calcX = () => event.clientX+250>window.innerWidth? event.clientX+250-window.innerWidth:event.clientX;
+    setMousePos({ x: calcX(), y: event.clientY+window.pageYOffset });
   }
-},);
+
+  const [menus, showMenu] = useState<boolean>(false);
+
   useEffect(() => {
-    const handleMouseMove = (event:any) => {
-      setMousePos({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mousemove', handleMouseMove);
+
+    if (!spec) {
+      const fetchTalentInfo = async() => {
+        const mainSpec = collection(db, "talent-shadow");
+        const offSpec = collection(db, "talent-discipline");
+        const offoffSpec= collection(db, "talent-holy");
+        const main = await getDocs(mainSpec);
+        const off = await getDocs(offSpec);
+        const offOff = await getDocs(offoffSpec);
+        setSpec({main:main.docs.map((doc:any) =>({...doc.data(), id:doc.id})), off:[off.docs.map((doc:any) =>({...doc.data(), id:doc.id})), offOff.docs.map((doc:any) =>({...doc.data(), id:doc.id}))]});
+        console.log("fetched server");
+      }
+      fetchTalentInfo();
+    }
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener(
-        'mousemove',
-        handleMouseMove
-      );
-    };
+      window.removeEventListener("mousemove", handleMouseMove);
+    }
   }, []);
 
-  useEffect(() => {
-    document.querySelector("#modalIcon")!.addEventListener("click", () => {
-      document.addEventListener("click", click);
-      if (menus === "none") {
-        showMenus("block")
-      }
-    })
-    const click = (ev:any) => {
+  useEffect(()=> {
+    document.addEventListener("click", ev => {
       if(ev.target !== document.querySelector("#menuDisplay")) {
-        showMenus("none");
+        showMenu(false);
       }
+    });
+    return () => {
+      document.removeEventListener("click", ev => {
+        if(ev.target !== document.querySelector("#menuDisplay")) {
+          showMenu(false);
+        }
+      })
     }
-    return () => document.removeEventListener("click", click);
-  })
+  },[menus])
 
   return (
     <div id="container">
-      <Viewer mousePos={mousePos} scrollPosition= {scrollPosition} viewer={viewer} />
+      <Viewer mousePos={mousePos} viewer={viewer} />
       <Header />
       <div id="wrapper">
         <Routes>
@@ -107,7 +99,10 @@ useEffect(() => {
           <div id="modalIcon"
             onClick = {() => {
               setTimeout(() => {
-                showMenus("block");
+                if (!menus) {
+                  showMenu(true)
+                  console.log("menu show")
+                }
               }, 25);
             }}
           >
@@ -115,31 +110,30 @@ useEffect(() => {
             <div className="hamburger-row"></div>
             <div className="hamburger-row"></div>
           </div>
-          <ul id="menuDisplay"
-            style = {{ display: menus }}
+          <ul id="menuDisplay" className={menus? "slide":""}
           >
             <div>
               { menu.map((el:string[]) => (
                 <li key = { el[1] } >
-                    <input
-                      className="menu"
-                      name = "menu"
-                      type = "radio"
-                      value = { el[1] }
-                      id = { el[1] }
-                      checked = { contents === el[1] }
-                      onChange = {() => {
-                        setContents(el[1]);
-                        (el[1] === "introduction") ?
-                          navigate("../cata-shadow")
-                         :
-                          navigate("../cata-shadow/" + el[1]);
-                        showMenus("none");
-                      }}
-                    />
-                    <label htmlFor = { el[1] }>
-                      { el[0] }
-                    </label>
+                  <input
+                    className="menu"
+                    name = "menu"
+                    type = "radio"
+                    value = { el[1] }
+                    id = { el[1] }
+                    checked = { contents === el[1] }
+                    onChange = {() => {
+                      setContents(el[1]);
+                      (el[1] === "introduction") ?
+                        navigate("../cata-shadow")
+                       :
+                        navigate("../cata-shadow/" + el[1]);
+                      showMenu(false);
+                    }}
+                  />
+                  <label htmlFor = { el[1] }>
+                    { el[0] }
+                  </label>
                 </li>
               ))}
             </div>

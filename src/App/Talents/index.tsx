@@ -70,7 +70,7 @@ const Talents = (props:any) => {
           <div className="talent-tree discipline">
           { props.spec? (
             props.spec.off[0].map((talent:any, index:number)=> (
-              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.discipline[index]}/>
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.discipline[index]} key={talent.id} />
             ))
           ):(<div>No Data</div>) }
           </div>
@@ -80,7 +80,7 @@ const Talents = (props:any) => {
           <div className="talent-tree holy">
           { props.spec? (
             props.spec.off[1].map((talent:any, index:number)=> (
-              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.holy[index]}/>
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.holy[index]} key={talent.id} />
             ))
           ):(<div>No Data</div>) }
           </div>
@@ -90,7 +90,7 @@ const Talents = (props:any) => {
           <div className="talent-tree shadow">
           { props.spec? (
             props.spec.main.map((talent:any, index:number)=> (
-              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.shadow[index]}/>
+              <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.shadow[index]} key={talent.id} />
             ))
           ):(<div>No Data</div>) }
           </div>
