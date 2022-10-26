@@ -66,12 +66,12 @@ useEffect(() => {
   useEffect(() => {
     document.querySelector("#modalIcon")!.addEventListener("click", () => {
       document.addEventListener("click", click);
-      if (menus == "none") {
+      if (menus === "none") {
         showMenus("block")
       }
     })
     const click = (ev:any) => {
-      if(ev.target != document.querySelector("#menuDisplay")) {
+      if(ev.target !== document.querySelector("#menuDisplay")) {
         showMenus("none");
       }
     }
