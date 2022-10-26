@@ -1,6 +1,10 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { db } from "../firebase-config";
+import { collection, getDocs } from "firebase/firestore";
+
 import "./styles.scss";
+
 import Header from "./Header/index";
 import Introduction from "./Introduction/index";
 import Talents from "./Talents/index";
@@ -26,6 +30,24 @@ const App = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
 };
+
+const [spec, setSpec] = useState<{main:any,off:any}>();
+
+useEffect(() => {
+  if (!spec) {
+    const fetchTalentInfo = async() => {
+      const mainSpec = collection(db, "talent-shadow");
+      const offSpec = collection(db, "talent-discipline");
+      const offoffSpec= collection(db, "talent-holy");
+      const main = await getDocs(mainSpec);
+      const off = await getDocs(offSpec);
+      const offOff = await getDocs(offoffSpec);
+      setSpec({main:main.docs.map((doc:any) =>({...doc.data(), id:doc.id})), off:[off.docs.map((doc:any) =>({...doc.data(), id:doc.id})), offOff.docs.map((doc:any) =>({...doc.data(), id:doc.id}))]});
+      console.log("fetched server");
+    }
+    fetchTalentInfo();
+  }
+},);
   useEffect(() => {
     const handleMouseMove = (event:any) => {
       setMousePos({ x: event.clientX, y: event.clientY });
@@ -40,6 +62,7 @@ const App = () => {
       );
     };
   }, []);
+
   useEffect(() => {
     document.querySelector("#modalIcon")!.addEventListener("click", () => {
       document.addEventListener("click", click);
@@ -61,16 +84,16 @@ const App = () => {
       <Header />
       <div id="wrapper">
         <Routes>
-          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
+          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
+          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
+          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} viewer={viewer} /> }
+          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
             key = { document.location.href }
           />
           <Route path = "/cata-shadow/consumables" element = { <Consumables /> }

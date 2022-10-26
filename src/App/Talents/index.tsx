@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Talent from "./Talent";
-import { db } from "../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
 
 const dungeon = {
   name:"dungeon",
@@ -24,16 +22,6 @@ const pvp = {
 
 const Talents = (props:any) => {
   const [build, setBuild] = useState(dungeon);
-  const [talentInfo, setTalentInfo] = useState<any>();
-  const talentCollectionRef = collection(db, "talent-info");
-  useEffect(() => {
-    const fetchTalentInfo = async() => {
-      const data = await getDocs(talentCollectionRef);
-      setTalentInfo(data.docs.map((doc:any) =>({...doc.data(), id:doc.id})));
-      console.log("fetched server");
-    }
-    fetchTalentInfo();
-  }, [talentCollectionRef]);
   return (
     <article id="talents">
     <h3>Talents</h3>
@@ -80,8 +68,8 @@ const Talents = (props:any) => {
         <section id="discipline">
           <h4><div className="spell-border"><div className="spell-icon" id="power-word-shield" /></div><div><span>Discipline</span><span>{build.discipline.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree discipline">
-          { talentInfo? (
-            talentInfo.slice(28,36).map((talent:any, index:number)=> (
+          { props.spec? (
+            props.spec.off[0].map((talent:any, index:number)=> (
               <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.discipline[index]}/>
             ))
           ):(<div>No Data</div>) }
@@ -90,8 +78,8 @@ const Talents = (props:any) => {
         <section id="holy">
           <h4><div className="spell-border"><div className="spell-icon" id="guardian-spirit" /></div><div><span>Holy</span><span>{build.holy.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree holy">
-          { talentInfo? (
-            talentInfo.slice(36,44).map((talent:any, index:number)=> (
+          { props.spec? (
+            props.spec.off[1].map((talent:any, index:number)=> (
               <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.holy[index]}/>
             ))
           ):(<div>No Data</div>) }
@@ -100,8 +88,8 @@ const Talents = (props:any) => {
         <section id="shadow">
           <h4><div className="spell-border"><div className="spell-icon" id="shadow-word-pain" /></div><div><span>Shadow</span><span>{build.shadow.reduce((sum, each) => {return each!==undefined? sum! + each: sum}, 0)}</span></div></h4>
           <div className="talent-tree shadow">
-          { talentInfo? (
-            talentInfo.slice(0,28).map((talent:any, index:number)=> (
+          { props.spec? (
+            props.spec.main.map((talent:any, index:number)=> (
               <Talent talent={talent} setViewer={props.setViewer} viewer={props.viewer} points={build.shadow[index]}/>
             ))
           ):(<div>No Data</div>) }
