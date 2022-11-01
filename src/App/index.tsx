@@ -27,7 +27,7 @@ const App = () => {
   //https://codingbeautydev.com/blog/react-get-mouse-position/
   const [mousePos, setMousePos] = useState({x:0,y:0});
   const handleMouseMove = (event:any) => {
-    const calcX = () => event.clientX+250>window.innerWidth? event.clientX+250-window.innerWidth:event.clientX;
+    const calcX = () => event.clientX+270>window.innerWidth? event.clientX+270-window.innerWidth:event.clientX;
     setMousePos({ x: calcX(), y: event.clientY+window.pageYOffset });
   }
 
@@ -76,16 +76,16 @@ const App = () => {
       <Header />
       <div id="wrapper">
         <Routes>
-          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
+          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
+          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
+          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} viewer={viewer} spec={spec} /> }
+          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
           <Route path = "/cata-shadow/consumables" element = { <Consumables /> }

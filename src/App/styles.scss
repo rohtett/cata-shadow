@@ -71,6 +71,9 @@
       }
       & #spells {
         & ul {
+          & .spell-border {
+            cursor: help;
+          }
           padding-left: 20px;
           padding-right: 20px;
           & li {
@@ -241,6 +244,21 @@
               & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
               & #inspiration {background-image: url("media/icons/Inspiration.png")}
               & #archangel {background-image: url("media/icons/Archangel.jpg")}
+              & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
+              & #chakra {background-image: url("media/icons/Chakra.png")}
+              & #divine-touch {background-image: url("media/icons/Divine_Touch.png")}
+              & #holy-concentration {background-image: url("media/icons/Holy_Concentration.png")}
+              & #tome-of-light {background-image: url("media/icons/Tome_of_Light.png")}
+              & #test-of-faith {background-image: url("media/icons/Test_of_Faith.png")}
+              & #spirit-of-redemption {background-image: url("media/icons/Spirit_of_Redemption.png")}
+              & #revelations {background-image: url("media/icons/Revelations.png")}
+              & #lightwell {background-image: url("media/icons/Lightwell.png")}
+              & #serendipity {background-image: url("media/icons/Serendipity.png")}
+              & #body-and-soul {background-image: url("media/icons/Body_and_Soul.png")}
+              & #blessed-resilience {background-image: url("media/icons/Blessed_Resilience.png")}
+              & #circle-of-healing {background-image: url("media/icons/Circle_of_Healing.png")}
+              & #heavenly-voice {background-image: url("media/icons/Heavenly_Voice.png")}
+              & #rapid-renewal {background-image: url("media/icons/Rapid_Renewal.png")}
               &.real-talent {
                 cursor: help;
                 transition: filter 0.4s;
@@ -385,8 +403,7 @@
     font-weight: normal;
     padding: 10px;
     padding-bottom: 20px;
-    color: orange;
-    opacity: 0;
+    color: gold;
     flex-direction: column;
     width: 250px;
     z-index: 10;
@@ -395,7 +412,11 @@
     border-radius: 4px;
     border: 1px solid #444;
     font-size: 0.8em;
+    & p {
+      margin: 0;
+    }
     & .tooltip-table {
+      border-spacing: 0px;
       width: 100%;
       color: #bbb;
       & td {
@@ -406,12 +427,9 @@
       }
     }
     & .spell-tooltip-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
       color: #bbb;
       &-title {
-        font-weight: bolder;
+        font-size: 1.2em;
       }
     }
   }

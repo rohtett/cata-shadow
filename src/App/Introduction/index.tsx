@@ -3,6 +3,7 @@ import Talent from "../Talents/Talent";
 import { db } from "../../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
+
 const Introduction = (props:any) => {
   return (
     <article>
@@ -17,7 +18,15 @@ const Introduction = (props:any) => {
         <p>Every class is unique, and these are just some of the spells which makes Shadow Priest what it is.</p>
         <ul>
           <li className="notable-spell">
-            <div className="spell-border">
+            <div
+              className="spell-border"
+              onMouseEnter={() => {
+                props.setViewer({talent:props.spec.main[13],value:100,points:props.spec.main[13].info.length,norank:true})
+              }}
+              onMouseOut={() => {
+                props.setViewer({talent:props.spec.main[13],value:0,points:props.spec.main[13].info.length,norank:true})
+              }}
+            >
               <div className="spell-icon" id="vampiric-embrace" />
             </div>
             <div className="spell-title">Vampiric Embrace</div>
@@ -31,7 +40,15 @@ const Introduction = (props:any) => {
           </li>
           <p>Not all classes have access to an execute ability... Shadow Priest is not all classes.</p>
           <li className="notable-spell">
-            <div className="spell-border">
+          <div
+            className="spell-border"
+            onMouseEnter={() => {
+              props.setViewer({talent:props.spec.main[25],value:100,points:props.spec.main[25].info.length,norank:true})
+            }}
+            onMouseOut={() => {
+              props.setViewer({talent:props.spec.main[25],value:0,points:props.spec.main[25].info.length,norank:true})
+            }}
+          >
               <div className="spell-icon" id="dispersion" />
             </div>
             <div className="spell-title">Dispersion</div>

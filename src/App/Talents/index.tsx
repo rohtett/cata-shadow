@@ -4,20 +4,20 @@ import Talent from "./Talent";
 const dungeon = {
   name:"dungeon",
   shadow:[3,2,2,undefined,0,3,2,2,undefined,1,2,2,0,1,2,2,2,1,0,undefined,0,2,3,undefined,undefined,1,undefined,undefined],
-  discipline:[1,3,2,undefined,2,1,0,0],
-  holy:[0,0,0,undefined,undefined,0,0,0]
+  discipline:[0,3,2,undefined,2,1,0,0,],
+  holy:[0,0,0,undefined,undefined,0,0,0,0,0,0,0,0,undefined,0,0,0,0,0,0,0,0,0,undefined,0,0,undefined,undefined]
 };
 const raid = {
   name:"raid",
   shadow:[3,2,2,undefined,0,3,2,2,undefined,1,0,2,0,1,2,2,2,1,0,undefined,0,2,3,undefined,undefined,1,undefined,undefined],
-  discipline:[0,3,3,undefined,2,1,0,0],
-  holy:[0,0,0,undefined,undefined,0,0,0]
+  discipline:[1,3,3,undefined,2,1,0,0,0,0,0,0,undefined,0,0,0,0,0,0,0,0,undefined,0,undefined,undefined,0,undefined,undefined],
+  holy:[0,0,0,undefined,undefined,0,0,0,0,0,0,0,0,undefined,0,0,0,0,0,0,0,0,0,undefined,0,0,undefined,undefined]
 }
 const pvp = {
   name:"pvp",
   shadow:[3,0,2,undefined,2,0,2,2,undefined,1,2,2,1,1,2,2,1,1,2,undefined,1,2,3,undefined,undefined,1,undefined,undefined],
   discipline:[2,3,0,undefined,2,1,0,0],
-  holy:[0,0,0,undefined,undefined,0,0,0]
+  holy:[0,0,0,undefined,undefined,0,0,0,0,0,0,0,0,undefined,0,0,0,0,0,0,0,0,0,undefined,0,0,undefined,undefined]
 }
 
 const Talents = (props:any) => {

@@ -1,17 +1,15 @@
 const Talent = (props: any) => {
-  const urlParse = (name:string) => {
-    return name.toLowerCase().replaceAll(" ", "-").replace(":","");
-  }
+  const urlParse = (name:string) =>  name.toLowerCase().replaceAll(" ", "-").replace(":","");
   return (
     props.talent.exists!==false? (
       <>
         <div
           key = { props.talent.id }
           onMouseEnter={() => {
-            props.setViewer({talent:props.talent,value:100,points:props.points})
+            props.setViewer({talent:props.talent,display:true,points:props.points})
           }}
           onMouseOut={() => {
-            props.setViewer({talent:props.talent,value:0,points:props.points})
+            props.setViewer({talent:props.talent,display:false,points:props.points})
           }}
           className = "spell-border talent real-talent"
         >

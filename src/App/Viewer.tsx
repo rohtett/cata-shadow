@@ -8,12 +8,18 @@ const Viewer = (props:any) => {
   }
   useEffect(()=> {
     setPoints(props.viewer.points)
+    console.log(props.viewer)
   }, [props.mousePos])
 
   return (
     <div className="spell-tooltip" id="Viewer"
-      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y, opacity: props.viewer.value+"%"}}>
-      <div className="spell-tooltip-header"><span className="spell-tooltip-header-title">{props.viewer.talent.name}</span><span>{"Rank "+(points)+"/"+props.viewer.talent.info.length}</span></div>
+      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y, display: props.viewer.display? "block": "none" }}>
+      <div className="spell-tooltip-header">
+        <div className="spell-tooltip-header-title">{props.viewer.talent.name}</div>
+        <p>{props.viewer.norank? null :
+            <span>{"Rank "+(points)+"/"+props.viewer.talent.info.length}</span>
+        }</p>
+      </div>
       {props.viewer.talent.spell? (
         <table className="tooltip-table">
           <tbody>
