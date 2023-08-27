@@ -11,7 +11,7 @@
     display: flex;
     width: 100vw;
     justify-content: space-between;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #bbb;
     z-index: 1;
     & > div {
       width: 1136px;
@@ -53,11 +53,116 @@
     }
   }
   & #wrapper {
+    & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+    & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
+    & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+    & #mass-dispel {background-image: url("media/icons/Mass_Dispel.jpg")}
+    & #mind-control {background-image: url("media/icons/Mind_Control.jpg")}
+    & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
+    & #shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
+    & #devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
+    & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
+    & #shadowfiend {background-image: url("media/icons/Shadowfiend.jpg")}
+    & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
+    & #archangel {background-image: url("media/icons/Archangel.jpg")}
+    & #stopwatch {background-image: url("media/icons/utility/Pocketwatch.jpg")}
+    & #gem-meta {background-image: url("media/icons/utility/socket-meta.jpg")}
+    & #lesser-inscription-of-charged-lodestone, & #greater-inscription-of-charged-lodestone {background-image: url("media/icons/utility/charged-lodestone.jpg")}
+    & #gem-prismatic {background-image: url("media/icons/utility/socket-prismatic.jpg")}
+    & #gem-red {background-image: url("media/icons/utility/socket-red.jpg")}
+    & #gem-blue {background-image: url("media/icons/utility/socket-blue.jpg")}
+    & #gem-yellow {background-image: url("media/icons/utility/socket-yellow.jpg")}
+    & #brilliant-inferno-ruby {background-image: url("media/icons/utility/inferno-ruby.jpg")}
+    & #brilliant-queens-garnet {background-image: url("media/icons/utility/queens-garnet.jpg")}
+    & #reckless-ember-topaz {background-image: url("media/icons/utility/ember-topaz.jpg")}
+    & #reckless-lava-coral {background-image: url("media/icons/utility/lava-coral.jpg")}
+    & #purified-demonseye {background-image: url("media/icons/utility/demonseye.jpg")}
+    & #purified-shadow-spinel {background-image: url("media/icons/utility/shadow-spinel.jpg")}
+    & #volcanic-potion {background-image: url("media/icons/utility/volcanic-potion.jpg")}
+    & #severed-sagefish-head {background-image: url("media/icons/utility/severed-sagefish-head.jpg")}
+    & #flask-of-the-draconic-mind {background-image: url("media/icons/utility/flask-of-the-draconic-mind.jpg")}
+    & #felfire-inscription {background-image: url("media/icons/utility/felfire-inscription.jpg")}
+    & #brilliant-chimeras-eye {background-image: url("media/icons/utility/chimeras-eye.jpg")}
+    & #enchant-boots---haste, & #enchant-gloves---haste, & #enchant-off-hand---superior-intellect {background-image: url("media/icons/utility/enchant-minor.jpg")}
+    & #power-torrent, & #enchant-gloves---greater-mastery, & #enchant-cloak---greater-intellect, & #enchant-chest---peerless-stats, & #enchant-ring---intellect, & #enchant-bracer---mighty-intellect {background-image: url("media/icons/utility/enchanting.webp")}
+    & #powerful-ghostly-spellthread {background-image: url("media/icons/utility/powerful-ghostly-spellthread.jpg")}
+    & #powerful-enchanted-spellthread {background-image: url("media/icons/utility/powerful-enchanted-spellthread.jpg")}
+    & #burning-shadowspirit-diamond {background-image: url("media/icons/utility/shadowspirit-diamond.jpg")}
+    & #lightweave-embroidery {background-image: url("media/icons/utility/embroidery.jpg")}
+    & #draconic-embossment-intellect {background-image: url("media/icons/utility/draconic-embossment.png")}
+    & #socket-bracer {background-image: url("media/icons/utility/socket-bracers.jpg")}
+    & #socket-glove {background-image: url("media/icons/utility/socket-gloves.jpg")}
+    & #arcanum-of-hyjal {background-image: url("media/icons/utility/arcanum.png")}
+    & #fortune-cookie {background-image: url("media/icons/utility/fortune-cookie.jpg")}
+    & #gear-cog, & #synapse-springs, & #grounded-plasma-shield {background-image: url("media/icons/utility/Gear_Cog.jpg")}
+    & #mind-flay {background-image: url("media/icons/Mind_Flay.jpg")}
+    & #mind-spike {background-image: url("media/icons/Mind_Spike.jpg")}
+    & #mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
+    & #sin-and-punishment {background-image: url("media/icons/Sin_and_Punishment.png")}
+    & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+    & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
+    & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
+    & #empowered-shadow {background-image: url("media/icons/empowered-shadow.jpg")}
+    & #mind-sear {background-image: url("media/icons/mind-sear.jpg")}
+    & #improved-shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
+    & #improved-devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
+    & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
+    & #improved-mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
+    & #darkness {background-image: url("media/icons/Darkness.png")}
+    & #veiled-shadows, & #fade {background-image: url("media/icons/Veiled_Shadows.png")}
+    & #improved-psychic-scream, & #psychic-scream {background-image: url("media/icons/Improved_Psychic_Scream.png")}
+    & #twisted-faith {background-image: url("media/icons/Twisted_Faith.png")}
+    & #shadowform {background-image: url("media/icons/Shadowform.png")}
+    & #phantasm {background-image: url("media/icons/Phantasm.png")}
+    & #harnessed-shadows {background-image: url("media/icons/Harnessed_Shadows.png")}
+    & #silence {background-image: url("media/icons/Silence.png")}
+    & #masochism {background-image: url("media/icons/Masochism.png")}
+    & #mind-melt {background-image: url("media/icons/Mind_Melt.png")}
+    & #pain-and-suffering {background-image: url("media/icons/Pain_and_Suffering.png")}
+    & #paralysis {background-image: url("media/icons/Paralysis.png")}
+    & #psychic-horror {background-image: url("media/icons/Psychic_Horror.png")}
+    & #sin-and-punishment, & #shadow-protection {background-image: url("media/icons/Sin_and_Punishment.png")}
+    & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
+    & #improved-power-word-shield, & #power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
+    & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
+    & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
+    & #evangelism {background-image: url("media/icons/Evangelism.png")}
+    & #inner-sanctum {background-image: url("media/icons/Inner_Fire.png")}
+    & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
+    & #improved-renew{background-image: url("media/icons/Renew.png")}
+    & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
+    & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
+    & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
+    & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
+    & #inspiration {background-image: url("media/icons/Inspiration.png")}
+    & #archangel {background-image: url("media/icons/Archangel.jpg")}
+    & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
+    & #chakra {background-image: url("media/icons/Chakra.png")}
+    & #divine-touch {background-image: url("media/icons/Divine_Touch.png")}
+    & #holy-concentration {background-image: url("media/icons/Holy_Concentration.png")}
+    & #tome-of-light {background-image: url("media/icons/Tome_of_Light.png")}
+    & #test-of-faith {background-image: url("media/icons/Test_of_Faith.png")}
+    & #spirit-of-redemption {background-image: url("media/icons/Spirit_of_Redemption.png")}
+    & #revelations {background-image: url("media/icons/Revelations.png")}
+    & #lightwell {background-image: url("media/icons/Lightwell.png")}
+    & #serendipity {background-image: url("media/icons/Serendipity.png")}
+    & #body-and-soul, & #hymn-of-hope {background-image: url("media/icons/Body_and_Soul.png")}
+    & #blessed-resilience {background-image: url("media/icons/Blessed_Resilience.png")}
+    & #circle-of-healing {background-image: url("media/icons/Circle_of_Healing.png")}
+    & #heavenly-voice {background-image: url("media/icons/Heavenly_Voice.png")}
+    & #rapid-renewal {background-image: url("media/icons/Rapid_Renewal.png")}
+    & #guardian-spirit {background-image: url("media/icons/Guardian_Spirit.jpg")}
+    & #shadow-word-pain {background-image: url("media//icons/Shadow_Word_Pain.jpg")}
     position: relative;
     top: 90px;
     max-width: 1136px;
     display: flex;
     & article {
+      & section {
+        & h3 {
+          border-bottom: 1px solid #bbb!important;
+        }
+      }
       min-height: 110vh;
       width: 950px;
       padding-left: 40px;
@@ -65,19 +170,30 @@
       & #banner {
         margin-top: 20px;
         background-image: url("media/Preview.jpg");
-        background-position: -520px -425px;
+        background-position: center -425px;
         width: 100%;
         height: 400px;
       }
+      & .spell-border {
+        cursor: help;
+      }
       & #spells {
         & ul {
-          & .spell-border {
-            cursor: help;
-          }
           padding-left: 20px;
           padding-right: 20px;
+          &.buffs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            & li {
+              text-align: left;
+              width: 200px;
+              margin-bottom: 20px;
+            }
+          }
           & li {
             display: flex;
+            align-items: center;
             & .spell-title {
               padding-top: 15px;
               padding-left: 5px;
@@ -85,10 +201,6 @@
             }
           & p {
             margin-bottom: 0px;
-          }
-          .spell-border {
-            position: relative;
-            top: 10px;
           }
         }
         & .spell-icon {
@@ -99,11 +211,6 @@
           border-radius: 4px;
           z-index: -1;
         }
-        & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
-        & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
-        & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
-        & #mass-dispel {background-image: url("media/icons/Mass_Dispel.jpg")}
-        & #mind-control {background-image: url("media/icons/Mind_Control.jpg")}
       }
       }
       & #contents {
@@ -111,50 +218,132 @@
           font-weight: bolder;
         }
       }
-      & #rotation {
-        & #shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
-        & #devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
-        & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
-        & #shadowfiend {background-image: url("media/icons/Shadowfiend.jpg")}
-        & #shadow-word-death {background-image: url("media/icons/Shadow_Word_Death.jpg")}
-        & #archangel {background-image: url("media/icons/Archangel.jpg")}
-        & #stopwatch {background-image: url("media/icons/Pocketwatch.jpg")}
-        & #gear-cog {background-image: url("media/icons/Gear_Cog.jpg")}
-        & #mind-flay {background-image: url("media/icons/Mind_Flay.jpg")}
-        & #mind-spike {background-image: url("media/icons/Mind_Spike.jpg")}
-        & #mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
-        .inline-border {
-          display: inline-flex;
-          margin-right: 0px;
-          height: 25px;
-          width: 25px;
-          position: relative;
-          top: 5px;
+      & h4 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0px;
+        padding: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        & > div:nth-child(2) {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
         }
-        .inline-icon {
-          height: 20px;
-          width: 20px;
+      }
+
+      &#rotation, &#stats {
+        & a {
+          color: orange;
+        }
+      }
+      &#rotation {
+        .code {
+          display: inline-block;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #bbb;
+
+          &.inline {
+            display: inline;
+            padding: 2px;
+          }
+        }
+      }
+      &#consumables {
+        & #pots {
+          display: flex;
+          & h4 {
+            margin-top: 0;
+            font-weight: normal;
+            border-bottom: 1px solid #bbb;
+          }
+          & ul {
+            margin: 0;
+            list-style-type: none;
+            & li{
+              text-align: left;
+              display: flex;
+              padding: 10px;
+            }
+          }
+          & .consumables--list {
+            min-width: 175px;
+            padding: 0 20px;
+          }
+        }
+        & #gems {
+          & td:nth-child(1) {
+            & div {
+              margin: 5px;
+              height: 15px;
+              width: 15px;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+          & p {
+            display: none;
+          }
+          & td:nth-child(2) {
+            width: 300px;
+            & div {
+              text-align: left;
+              display: flex;
+              padding: 2.5px 10px;
+            }
+          }
+        }
+        & table {
+          padding: 20px;
+          border: 1px solid #bbb;
+          border-collapse: collapse;
+          & td,tbody {
+            border: 1px solid #bbb;
+            border-collapse: collapse;
+          }
+          & td {
+            padding: 10px;
+          }
+        }
+        & #enchants {
+          text-align: left;
+          & div {
+            padding: 10px;
+          }
+          display: flex;
+          & ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: none;
+            & li {
+              padding: 2.5px;
+            }
+          }
+          & h4 {
+            margin: 0;
+            font-weight: normal;
+          }
+        }
+        & #professions {
+          text-align: left;
+          & b {
+            padding-right: 10px;
+          }
         }
       }
       &#talents {
         & h4 {
-          display: flex;
-          align-items: center;
-          margin-bottom: 0px;
-          padding: 10px;
-          padding-top: 5px;
           border: 1px solid #444;
-          box-sizing: border-box;
           & .spell-border {
-            height: 40px;
-            width: 40px;
+            min-height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            min-width: 40px;
             align-items:flex-start;
+            position: relative;
+            top: 5px;
             padding-top: 1px;
-          }
-          & > div:nth-child(2) {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
           }
         }
         & ul#build-planner {
@@ -164,8 +353,16 @@
           padding-left: 0;
           & input {
             display: none;
+            &+ label.build {
+              transition: border 0.4s;
+            }
             &:checked + label.build {
               border-color: #bbb;
+              transition: border 0.4s;
+            }
+            &:hover + label.build {
+              border-color: #bbb;
+              transition: border 0.4s;
             }
           }
           & label.build {
@@ -186,6 +383,9 @@
           display: flex;
           justify-content: center;
           & .talent-tree {
+            &.discipline {background-image: url("media/PriestDiscipline.png")}
+            &.holy {background-image: url("media/PriestHoly.png")}
+            &.shadow {background-image: url("media/PriestShadow.png")}
             display: flex;
             flex-wrap: wrap;
             height: 420px;
@@ -196,9 +396,6 @@
             padding-top: 15px;
             align-content: flex-start;
             justify-content: center;
-            &.discipline {background-image: url("media/PriestDiscipline.png")}
-            &.holy {background-image: url("media/PriestHoly.png")}
-            &.shadow {background-image: url("media/PriestShadow.png")}
             &h4 {
               display: flex;
               justify-content: space-between;
@@ -210,55 +407,6 @@
               margin-bottom: 7.5px;
               margin-right: 0px;
               position: relative;
-              & #vampiric-embrace {background-image: url("media/icons/Vampiric_Embrace.jpg")}
-              & #dispersion {background-image: url("media/icons/Dispersion.jpg")}
-              & #improved-shadow-word-pain {background-image: url("media/icons/Shadow_Word_Pain.jpg")}
-              & #improved-devouring-plague {background-image: url("media/icons/Devouring_Plague.jpg")}
-              & #vampiric-touch {background-image: url("media/icons/Vampiric_Touch.jpg")}
-              & #improved-mind-blast {background-image: url("media/icons/Mind_Blast.jpg")}
-              & #darkness {background-image: url("media/icons/Darkness.png")}
-              & #veiled-shadows {background-image: url("media/icons/Veiled_Shadows.png")}
-              & #improved-psychic-scream {background-image: url("media/icons/Improved_Psychic_Scream.png")}
-              & #twisted-faith {background-image: url("media/icons/Twisted_Faith.png")}
-              & #shadowform {background-image: url("media/icons/Shadowform.png")}
-              & #phantasm {background-image: url("media/icons/Phantasm.png")}
-              & #harnessed-shadows {background-image: url("media/icons/Harnessed_Shadows.png")}
-              & #silence {background-image: url("media/icons/Silence.png")}
-              & #masochism {background-image: url("media/icons/Masochism.png")}
-              & #mind-melt {background-image: url("media/icons/Mind_Melt.png")}
-              & #pain-and-suffering {background-image: url("media/icons/Pain_and_Suffering.png")}
-              & #paralysis {background-image: url("media/icons/Paralysis.png")}
-              & #psychic-horror {background-image: url("media/icons/Psychic_Horror.png")}
-              & #sin-and-punishment {background-image: url("media/icons/Sin_and_Punishment.png")}
-              & #shadowy-apparition {background-image: url("media/icons/Shadowy_Apparition.png")}
-              & #improved-power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
-              & #twin-disciplines {background-image: url("media/icons/Twin_Disciplines.png")}
-              & #mental-agility {background-image: url("media/icons/Mental_Agility.png")}
-              & #evangelism {background-image: url("media/icons/Evangelism.png")}
-              & #inner-sanctum {background-image: url("media/icons/Inner_Fire.png")}
-              & #soul-warding {background-image: url("media/icons/Soul_Warding.png")}
-              & #improved-renew{background-image: url("media/icons/Renew.png")}
-              & #empowered-healing {background-image: url("media/icons/Greater_Heal.png")}
-              & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
-              & #desperate-prayer {background-image: url("media/icons/Desperate_Prayer.png")}
-              & #surge-of-light {background-image: url("media/icons/Surge_of_Light.png")}
-              & #inspiration {background-image: url("media/icons/Inspiration.png")}
-              & #archangel {background-image: url("media/icons/Archangel.jpg")}
-              & #divine-fury {background-image: url("media/icons/Divine_Fury.png")}
-              & #chakra {background-image: url("media/icons/Chakra.png")}
-              & #divine-touch {background-image: url("media/icons/Divine_Touch.png")}
-              & #holy-concentration {background-image: url("media/icons/Holy_Concentration.png")}
-              & #tome-of-light {background-image: url("media/icons/Tome_of_Light.png")}
-              & #test-of-faith {background-image: url("media/icons/Test_of_Faith.png")}
-              & #spirit-of-redemption {background-image: url("media/icons/Spirit_of_Redemption.png")}
-              & #revelations {background-image: url("media/icons/Revelations.png")}
-              & #lightwell {background-image: url("media/icons/Lightwell.png")}
-              & #serendipity {background-image: url("media/icons/Serendipity.png")}
-              & #body-and-soul {background-image: url("media/icons/Body_and_Soul.png")}
-              & #blessed-resilience {background-image: url("media/icons/Blessed_Resilience.png")}
-              & #circle-of-healing {background-image: url("media/icons/Circle_of_Healing.png")}
-              & #heavenly-voice {background-image: url("media/icons/Heavenly_Voice.png")}
-              & #rapid-renewal {background-image: url("media/icons/Rapid_Renewal.png")}
               &.real-talent {
                 cursor: help;
                 transition: filter 0.4s;
@@ -299,24 +447,10 @@
             }
           }
         }
-        & #power-word-shield {background-image: url("media/icons/Power_Word_Shield.png")}
-        & #guardian-spirit {background-image: url("media/icons/Guardian_Spirit.jpg")}
-        & #shadow-word-pain {background-image: url("media//icons/Shadow_Word_Pain.jpg")}
       }
       & #haste-caps {
         & h4 {
           display: flex;
-        }
-        & #devouring-plague {
-          background-image: url("media/icons/Devouring_Plague.jpg");
-        }
-
-        & #shadow-word-pain {
-          background-image: url("media/icons/Shadow_Word_Pain.jpg");
-        }
-
-        & #vampiric-touch {
-          background-image: url("media/icons/Vampiric_Touch.jpg");
         }
         & .tableContainer {
           width: 100%;
@@ -343,6 +477,22 @@
       display: inline-flex;
       margin-right: 5px;
     }
+    & .inline-border {
+      display: inline-flex!important;
+      margin-right: 0px;
+      min-height: 25px!important;
+      max-width: 25px!important;
+      max-height: 25px!important;
+      min-width: 25px!important;
+      position: relative;
+      top: 5px;
+    }
+    & .inline-icon {
+      min-height: 20px!important;
+      min-width: 20px!important;
+      max-height: 20px!important;
+      max-width: 20px!important;
+    }
     & nav {
       &#modalMenu {
         display: none;
@@ -368,19 +518,35 @@
     & input.menu {
       display: none;
       &+ label {
+        transition: border-left 0.4s;
         cursor: pointer;
         color: #444;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         &:hover {
           color: #bbb;
+          transition: color 0.4s;
+        }
+        & div {
+          padding-left: 10px;
+          border-left: 2px solid transparent;
         }
       }
-      &:checked + label {
+      &:checked + label div {
+        transition: border-left 0.4s;
+        border-left: 2px solid #bbb;
         color: #bbb;
-        font-weight: bolder;
+
       }
     }
   }
     & .spell-border {
+      min-height: 35px;
+      min-width: 35px;
       height: 35px;
       width: 35px;
       background-size: contain;
@@ -391,6 +557,8 @@
       background-repeat: no-repeat;
     }
     & .spell-icon {
+      min-height: 30px;
+      min-width: 30px;
       height: 30px;
       width: 30px;
       background-size: contain;
@@ -471,6 +639,22 @@
       & #discipline, & #holy {
         height: 220px;
         width: 256px;
+      }
+    }
+  }
+  article#consumables {
+    #pots {
+      display: block!important;
+    }
+    #gems {
+      table {
+        width: 100%;
+      }
+      p {
+        display: inline!important;
+      }
+      tr td:nth-child(3) {
+        display: none;
       }
     }
   }

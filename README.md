@@ -6,6 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 
+## To Be Implements
+- Scroll to Top Button
+- Automatic Scroll to Top from Hamburger menu
+-
+
 ##Technologies Used
 - [ReactJS](https://reactjs.org/)
 -- This app was created using ReactJS, using React state and router-dom.

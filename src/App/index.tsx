@@ -13,7 +13,7 @@ import Consumables from "./Consumables/index";
 import Footer from "./Footer/index";
 import Viewer from "./Viewer";
 
-const menu: string[][] = [["Introduction", "introduction"], ["Talents", "talents"], ["Rotation", "rotation"], ["Stats and Reforging", "stats"], ["Consumables and Glyphs", "consumables"]]
+const menu: string[][] = [["Introduction", "introduction"], ["Talents and Glyphs", "talents"], ["Rotation and Macros", "rotation"], ["Stats and Reforging", "stats"], ["Consumables, Gems and Enchants", "consumables"]]
 
 const App = () => {
   const navigate = useNavigate();
@@ -21,39 +21,36 @@ const App = () => {
   const [contents, setContents] = useState("introduction");
   const [viewer, setViewer] = useState({talent:{spell:{mana:null,range:null,cast:null,cooldown:null},info:[null,null,null],name:null,id:null},value:0});
 
-  const [spec, setSpec] = useState<{main:any,off:any}>();
-
-  //Mouse position tracker from:
-  //https://codingbeautydev.com/blog/react-get-mouse-position/
-  const [mousePos, setMousePos] = useState({x:0,y:0});
-  const handleMouseMove = (event:any) => {
-    const calcX = () => event.clientX+270>window.innerWidth? event.clientX+270-window.innerWidth:event.clientX;
-    setMousePos({ x: calcX(), y: event.clientY+window.pageYOffset });
-  }
+  const [spec, setSpec] = useState<{main:any,off:any,spell:any}>();
 
   const [menus, showMenu] = useState<boolean>(false);
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
 
     if (!spec) {
       const fetchTalentInfo = async() => {
         const mainSpec = collection(db, "talent-shadow");
         const offSpec = collection(db, "talent-discipline");
         const offoffSpec= collection(db, "talent-holy");
+        const spellList = collection(db, "spell");
         const main = await getDocs(mainSpec);
         const off = await getDocs(offSpec);
         const offOff = await getDocs(offoffSpec);
-        setSpec({main:main.docs.map((doc:any) =>({...doc.data(), id:doc.id})), off:[off.docs.map((doc:any) =>({...doc.data(), id:doc.id})), offOff.docs.map((doc:any) =>({...doc.data(), id:doc.id}))]});
+        const spell = await getDocs(spellList);
+        setSpec({
+          main:main.docs.map((doc:any) =>({...doc.data(), id:doc.id})),
+          off:[
+            off.docs.map((doc:any) =>({...doc.data(), id:doc.id})),
+            offOff.docs.map((doc:any) =>({...doc.data(), id:doc.id})),
+          ],
+          spell: spell.docs.map((doc: any) => ({ ...doc.data(), id: doc.id }))
+        });
         console.log("fetched server");
       }
-      fetchTalentInfo();
+      fetchTalentInfo()
     }
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, []);
+  });
 
   useEffect(()=> {
     document.addEventListener("click", ev => {
@@ -72,23 +69,23 @@ const App = () => {
 
   return (
     <div id="container">
-      <Viewer mousePos={mousePos} viewer={viewer} />
+      <Viewer viewer={viewer} />
       <Header />
       <div id="wrapper">
         <Routes>
-          <Route path = "/cata-shadow" element = { <Introduction mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
+          <Route path = "/cata-shadow" element = { <Introduction setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/talents" element = { <Talents mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
+          <Route path = "/cata-shadow/talents" element = { <Talents setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/rotation" element = { <Rotation mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
+          <Route path = "/cata-shadow/rotation" element = { <Rotation setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/stats" element = { <Stats mousePos={mousePos} setViewer={setViewer} spec={spec} /> }
+          <Route path = "/cata-shadow/stats" element = { <Stats setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
-          <Route path = "/cata-shadow/consumables" element = { <Consumables /> }
+          <Route path = "/cata-shadow/consumables" element = { <Consumables setViewer={setViewer} spec={spec} /> }
             key = { document.location.href }
           />
           <Route path ="*" element = { <Landing /> }
@@ -160,7 +157,7 @@ const App = () => {
                       }}
                     />
                     <label htmlFor = { el[1] }>
-                      { el[0] }
+                      <div>{ el[0] }</div>
                     </label>
                 </li>
               ))}

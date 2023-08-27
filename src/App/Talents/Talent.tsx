@@ -9,7 +9,10 @@ const Talent = (props: any) => {
             props.setViewer({talent:props.talent,display:true,points:props.points})
           }}
           onMouseOut={() => {
-            props.setViewer({talent:props.talent,display:false,points:props.points})
+            props.setViewer((prevState :any) => ({
+              ...prevState,
+              display: false,
+            }));
           }}
           className = "spell-border talent real-talent"
         >

@@ -1,75 +1,80 @@
 import { NavLink } from "react-router-dom";
-import Talent from "../Talents/Talent";
-import { db } from "../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-
+import Spell from "../Spell";
 
 const Introduction = (props:any) => {
   return (
     <article>
-    <img id="banner" />
+    <div id="banner" />
       <section>
         <h3>Introduction</h3>
-        <p>Shadow Priest has a rocky start to the expansion; having two very strong healing specialisations to them, Shadow became very underappreciated. By Dragon Soul patch, Shadow can easily be recognised as a strong damage spec, matching and even exceeding some of its ranged competitors. It presents the player with a rotation that is both easy to understand and easy to master.</p>
-        <p>The strengths of Shadow lies in it's ability to cleave enemies at range. Shadow is un-matched when it comes to its multi-dotting (hitting multiple targets with damage over time) abilities, surpassing even Affliction Warlock and Balance Druid. This allows it to easily surpass Shamans in situations where enemies cannot stand close enough to be cleaved otherwise.</p>
+        <p>Shadow Priest has a rocky start to the expansion. Having two very strong healing specialisations to the class, Shadow became very underappreciated. By Dragon Soul patch however, Shadow can easily be recognised as a strong damage spec. Matching, and even exceeding some of its ranged competitors, it presents the player with a rotation that is both easy to understand and easy to master.</p>
+        <p>The strengths of Shadow lies in it's ability to cleave enemies at range. Shadow is un-matched when it comes to its multi-dotting (hitting multiple targets with damage over time) abilities, surpassing even Affliction Warlock and Balance Druid. This allows it to easily surpass Shamans, and melee DPSes, in situations where enemies cannot stand close enough to be cleaved otherwise.</p>
+        <p>While Shadow brings a lot of the same buffs to the raid as other ranged damage classes, it has uniquness in the cooldowns and on-use skills it brings to a group. They have spells which grant a burst of healing or mana, that can save a wipe. While also offering a lot in the ways of utility such as dispelling and pulling other players towards them.</p>
       </section>
       <section id="spells">
         <h3>Notable Spells and Talents</h3>
         <p>Every class is unique, and these are just some of the spells which makes Shadow Priest what it is.</p>
         <ul>
           <li className="notable-spell">
-            <div
-              className="spell-border"
-              onMouseEnter={() => {
-                props.setViewer({talent:props.spec.main[13],value:100,points:props.spec.main[13].info.length,norank:true})
-              }}
-              onMouseOut={() => {
-                props.setViewer({talent:props.spec.main[13],value:0,points:props.spec.main[13].info.length,norank:true})
-              }}
-            >
-              <div className="spell-icon" id="vampiric-embrace" />
-            </div>
-            <div className="spell-title">Vampiric Embrace</div>
+            <Spell title="Shadowform"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
           </li>
-          <p>The amount of healing this spell provides over prolonged encounters is simply incredible... and all this both passively without any effort and for free, just by being in a group.</p>
+          <p>While very cool to look at, this skill increases all Shadow damage you do significantly and also provides the 5% haste buff to your entire raid.</p>
           <li className="notable-spell">
-            <div className="spell-border">
-              <div className="spell-icon" id="shadow-word-death" />
-            </div>
-            <div className="spell-title">Shadow Word: Death</div>
+            <Spell title="Mind Sear"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
           </li>
-          <p>Not all classes have access to an execute ability... Shadow Priest is not all classes.</p>
+          <p>A very convenient and efficient way to kill multiple enemies at once.</p>
           <li className="notable-spell">
-          <div
-            className="spell-border"
-            onMouseEnter={() => {
-              props.setViewer({talent:props.spec.main[25],value:100,points:props.spec.main[25].info.length,norank:true})
-            }}
-            onMouseOut={() => {
-              props.setViewer({talent:props.spec.main[25],value:0,points:props.spec.main[25].info.length,norank:true})
-            }}
-          >
-              <div className="spell-icon" id="dispersion" />
-            </div>
-            <div className="spell-title">Dispersion</div>
+            <Spell title="Shadow Word: Death" spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <p>An execute ability is always appreciated, and this one is particularly strong especially when it comes to end-game.</p>
+          <li className="notable-spell">
+            <Spell title="Dispersion" spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
           </li>
           <p>This spells acts not only provides a whopping 90% damage reduction, it also serves as a quick way to quickly gain mana in a pinch!</p>
           <li className="notable-spell">
-            <div className="spell-border">
-              <div className="spell-icon" id="mass-dispel" />
-            </div>
-            <div className="spell-title">Mass Dispel</div>
+            <Spell title="Leap of Faith" spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
           </li>
-          <p>The legendary ability is not just limited to other Priest specialisations, but Shadow too! All without removing you from your Shadowform stance.</p>
-          <li className="notable-spell">
-            <div className="spell-border">
-              <div className="spell-icon" id="mind-control" />
-            </div>
-            <div className="spell-title">Mind Control</div>
-          </li>
-          <p>While it serves little purpose in a PvE environment, it is a particularly strong spell for fighting against other players.</p>
+          <p>While it's not implicitly a Shadow spell, it's very much a staple skill of this class and something that you may want to consider when picking this spec.</p>
         </ul>
-        <p>On top of these, Shadow Priest is also capable of providing many other useful raid utility, such as 585 Stamina buff, 195 Shadow Resistance and 5% Haste.</p>
+        <h3>Buffs, Debuffs and Useful Abilities</h3>
+        <ul className="buffs">
+        <li className="notable-spell">
+          <Spell title="Power Word: Fortitude"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+        </li>
+        <li className="notable-spell">
+          <Spell title="Shadow Protection"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+        </li>
+        <li className="notable-spell">
+          <Spell title="Power Word: Shield"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+        </li>
+          <li className="notable-spell">
+            <Spell title="Vampiric Embrace"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Improved Mind Blast"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Psychic Scream"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Mass Dispel"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Fear Ward"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Divine Hymn"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Hymn of Hope"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Fade"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+          <li className="notable-spell">
+            <Spell title="Ressurection"spec={props.spec} viewer={props.viewer} setViewer={props.setViewer}/>
+          </li>
+        </ul>
       </section>
       <section id="contents">
         <h3>Contents</h3>

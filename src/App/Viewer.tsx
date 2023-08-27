@@ -1,23 +1,39 @@
 import {useState, useEffect } from "react";
+
 const Viewer = (props:any) => {
-  const [points,setPoints] = useState(0);
+  const [points,setPoints] = useState<number>(0);
   const parseHTML = () => {
     return {
       __html: props.viewer.talent.info[points-1>=1? points-1:0]
     }
   }
+
+  //Mouse position tracker from:
+  //https://codingbeautydev.com/blog/react-get-mouse-position/
+  const [mousePos, setMousePos] = useState({x:0,y:0});
+  const handleMouseMove = (event:any) => {
+    const calcX = () => event.clientX+270>window.innerWidth? event.clientX+270-window.innerWidth:event.clientX;
+    setMousePos({ x: calcX(), y: event.clientY+window.pageYOffset });
+  }
+
   useEffect(()=> {
-    setPoints(props.viewer.points)
-    console.log(props.viewer)
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    }
   }, [props.mousePos])
+
+  useEffect(() => {
+    setPoints(props.viewer.points)
+  })
 
   return (
     <div className="spell-tooltip" id="Viewer"
-      style={{position: "absolute", left: props.mousePos.x, top: props.mousePos.y, display: props.viewer.display? "block": "none" }}>
+      style={{position: "absolute", left: mousePos.x, top: mousePos.y, display: props.viewer.display? "block": "none" }}>
       <div className="spell-tooltip-header">
         <div className="spell-tooltip-header-title">{props.viewer.talent.name}</div>
-        <p>{props.viewer.norank? null :
-            <span>{"Rank "+(points)+"/"+props.viewer.talent.info.length}</span>
+        <p>{props.viewer.talent.info.length-1?
+          <span>{"Rank "+(points)+"/"+props.viewer.talent.info.length}</span> :null
         }</p>
       </div>
       {props.viewer.talent.spell? (
