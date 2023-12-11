@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cata-shadow/static/css/main.a9f1af9f.css",
-    "main.js": "/cata-shadow/static/js/main.9b10afc7.js",
+    "main.js": "/cata-shadow/static/js/main.f1a33077.js",
     "static/js/787.47827543.chunk.js": "/cata-shadow/static/js/787.47827543.chunk.js",
     "static/media/Preview.jpg": "/cata-shadow/static/media/Preview.5843183004eb2d594bb2.jpg",
     "static/media/PriestDiscipline.png": "/cata-shadow/static/media/PriestDiscipline.511799f86c7701cc0248.png",
@@ -11,11 +11,11 @@
     "static/media/enchanting.webp": "/cata-shadow/static/media/enchanting.f81ae2e58f1a9680de25.webp",
     "index.html": "/cata-shadow/index.html",
     "main.a9f1af9f.css.map": "/cata-shadow/static/css/main.a9f1af9f.css.map",
-    "main.9b10afc7.js.map": "/cata-shadow/static/js/main.9b10afc7.js.map",
+    "main.f1a33077.js.map": "/cata-shadow/static/js/main.f1a33077.js.map",
     "787.47827543.chunk.js.map": "/cata-shadow/static/js/787.47827543.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a9f1af9f.css",
-    "static/js/main.9b10afc7.js"
+    "static/js/main.f1a33077.js"
   ]
 }
